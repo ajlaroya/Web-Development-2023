@@ -1,7 +1,8 @@
 'use client'
 
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
+import WorkCard from "./WorkCard";
 
 import Lenis from '@studio-freight/lenis'
 import gsap from 'gsap'
@@ -25,68 +26,31 @@ const lenis = new Lenis({
   }
   
   requestAnimationFrame(raf)
-  
-  gsap.registerPlugin(ScrollTrigger)
 
 const Work = () => {
-  useEffect(() => {
-    const tl = gsap.timeline({
-        scrollTrigger: '.img',
-        scrub: true
-      })
-      .to('.img', {
-        stagger: .2,
-        y:-700,
-        scrub:true
-      })
-  }, [])
-  
-
   return (
     <>
-      <section className="grid grid-cols-3 min-h-screen m-auto">
-        <div className="absolute h-[100vh] w-full z-40 top-0 left-0 border-r-2"></div>
-        <div className="absolute h-[100vh] w-full z-40 top-0 left-0 border-r-2"></div>
-        <div className="absolute h-[100vh] w-full z-40 top-0 left-0 border-r-2"></div>
-      </section>
+      <div className="w-full text-center pb-32">
+        <span className="text-white text-[101px] md:text-[128px]">"WORK"</span>
+      </div>
 
-      <section className="grid grid-cols-2 md:grid-cols-3 h-[200vh] m-auto">
-        <div className="img w-full h-full relative bg-cover -z-1">
-          <Image
-            src="http://res.cloudinary.com/deaiddej2/image/upload/v1675422798/h6wxmovxxbw5ehx5fpqi.png"
-            fill
-          />
-        </div>
-        <div className="img w-full h-full relative bg-cover -z-1">
-          <Image
-            src="http://res.cloudinary.com/deaiddej2/image/upload/v1675422685/lyqtrqydsfxqg9kf8ozr.png"
-            fill
-          />
-        </div>
-        <div className="img w-full h-full relative bg-cover -z-1">
-          <Image
-            src="https://res.cloudinary.com/deaiddej2/image/upload/v1675422565/dz60xcg7yk3q0dtbmdiv.png"
-            fill
-          />
-        </div>
-        <div className="img w-full h-full relative bg-cover -z-1">
-          <Image
-            src="https://res.cloudinary.com/deaiddej2/image/upload/v1675415562/xsfngbpranpvhiec0rlq.png"
-            fill
-          />
-        </div>
-        <div className="img w-full h-full relative bg-cover -z-1">
-          <Image
-            src="https://res.cloudinary.com/deaiddej2/image/upload/v1675415685/jseddzj9abgydburo2u1.png"
-            fill
-          />
-        </div>
-        <div className="img w-full h-full relative bg-cover -z-1">
-          <Image
-            src="http://res.cloudinary.com/deaiddej2/image/upload/v1675422798/h6wxmovxxbw5ehx5fpqi.png"
-            fill
-          />
-        </div>
+      <section className="grid grid-cols-2 gap-5 md:grid-cols-3 mx-10 pb-32">
+        <WorkCard img="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1600&q=60"
+        title="ANGEL"
+        subtitle="1/12/23"
+        tag="REACT" />
+        <WorkCard img="https://images.unsplash.com/photo-1579965342575-16428a7c8881?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFpbnRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=1600&q=60"
+        title="BIRD"
+        subtitle="2/12/23"
+        tag="NEXTJS" />
+        <WorkCard img="https://images.unsplash.com/photo-1549289524-06cf8837ace5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFpbnRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=1600&q=60"
+        title="OPEN"
+        subtitle="3/12/23"
+        tag="UI/UX" />
+        <WorkCard img="https://images.unsplash.com/photo-1544867885-2333f61544ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1600&q=60"
+        title="PALM"
+        subtitle="4/12/23"
+        tag="FRONTEND" />
       </section>
     </>
   );

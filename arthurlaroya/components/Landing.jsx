@@ -43,7 +43,7 @@ const Landing = () => {
 
   return (
     <section className="mx-10 section-content">
-      <div className="py-28 px-20 md:px-48 md:py-56" ref={boxRef}>
+      <div className="py-28 px-20 md:px-48 md:py-48" ref={boxRef}>
         <p className="indent-12 text-[33px] md:text-[54px] leading-[38px] md:leading-[62px] text-gray-400 text-left font-medium">
           Arthur Laroya <span className="relative animate-bounce">🍃</span>is a{" "}
           <span className="font-serif italic text-white">rising </span>star
