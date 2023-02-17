@@ -5,5 +5,6 @@
 html, body {
     width: 100%;
     overscroll-behavior: none;
+    scroll-behavor: smooth;
     min-height: 100%
 }
