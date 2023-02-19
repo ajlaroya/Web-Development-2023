@@ -19,7 +19,7 @@ export default async function Page() {
   const data = await getData();
 
   return (
-    <div className="relative bg-[#F2F2F2] min-h-screen">
+    <div className="relative min-h-screen">
       <Nav />
       <Header />
       <Landing />

@@ -24,7 +24,7 @@ const neauMontreal = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={neauMontreal.className}>
+    <html lang="en" className={`${neauMontreal.className} bg-[#F2F2F2]`}>
       <head />
       <body>{children}</body>
     </html>
