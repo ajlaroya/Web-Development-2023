@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import redis from "@/redis";
 import { Message } from "@/typings";
+import { serverPusher } from "@/pusher";
 
 type Data = {
   message: Message;
@@ -30,6 +31,9 @@ export default async function handler(
 
   // Push message to Upstash Redis db
   await redis.hset("messages", message.id, JSON.stringify(newMessage));
+  
+  // Pushes message to Pusher
+  serverPusher.trigger('messages', 'new-message', newMessage);
 
   res.status(200).json({ message: newMessage });
 }
