@@ -1,10 +1,10 @@
-import './globals.css'
-import Header from './Header'
+import "./globals.css";
+import Header from "./Header";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -14,5 +14,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }

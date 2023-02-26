@@ -1,10 +1,11 @@
+import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import LogoutButton from "./LogoutButton";
 
-const Header = () => {
-  const session = true;
+const Header = async () => {
+  const session = await getServerSession();
 
   if (session)
     return (
@@ -14,13 +15,13 @@ const Header = () => {
             className="rounded-full mx-2 aspect-square object-cover"
             height={10}
             width={50}
-            src="https://static.wikia.nocookie.net/witchers/images/b/b0/Hanni_OMG_Concept_Photo_%281%29.jpg/revision/latest/scale-to-width-down/1200?cb=20230102103902"
+            src={session.user?.image!}
             alt="avatar"
           />
 
           <div>
             <p className="text-green-400">Logged in as:</p>
-            <p className="font-bold text-lg">Arthur Laroya</p>
+            <p className="font-bold text-lg">{session.user?.name}</p>
           </div>
         </div>
 
