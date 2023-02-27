@@ -1,13 +1,14 @@
 import { Message } from "@/typings";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import TimeAgo from "react-timeago";
 
 type Props = {
   message: Message;
 };
 
 function MessageBubble({ message }: Props) {
-  const { data: session } = useSession()
+  const { data: session } = useSession();
   const isUser = session?.user?.email === message.email;
 
   return (
@@ -45,7 +46,7 @@ function MessageBubble({ message }: Props) {
               isUser && "text-right"
             }`}
           >
-            {/* {new Date(message.created_at).toLocaleString()} */}
+            <TimeAgo date={new Date(message.created_at)} />
           </p>
         </div>
       </div>
