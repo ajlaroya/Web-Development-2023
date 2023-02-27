@@ -8,7 +8,7 @@ import Providers from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
-  const data = await fetch(`${process.env.VERCEL_URL}/api/getMessages`).then(
+  const data = await fetch(`http://localhost:3000/api/getMessages`).then(
     (res: Response) => res.json()
   );
 
