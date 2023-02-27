@@ -13,8 +13,6 @@ type Props = {
 };
 
 const ChatInput = ({ session }: Props) => {
-  console.log(session);
-
   const [input, setInput] = useState("");
 
   // fetches information and stores in cache
