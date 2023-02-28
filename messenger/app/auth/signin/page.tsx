@@ -3,7 +3,7 @@ import Image from "next/image";
 import SignInComponent from "./SignInComponent";
 
 const SignInPage = async () => {
-  const providers = await getProviders();
+  // const providers = await getProviders();
 
   return (
     <div className="grid justify-center gap-7 py-10">
@@ -17,7 +17,7 @@ const SignInPage = async () => {
         />
       </div>
 
-      <SignInComponent providers={providers} />
+      {/* <SignInComponent providers={providers} /> */}
     </div>
   );
 };
