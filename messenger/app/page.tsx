@@ -8,12 +8,11 @@ import Providers from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
-  // const data = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/getMessages`).then(
-  //   (res: Response) => res.json()
-  // );
+  const data = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/getMessages`).then(
+    (res: Response) => res.json()
+  );
 
-  // const messages: Message[] = data.messages;
-  const messages: Message[] = []
+  const messages: Message[] = data.messages;
   const session = await getServerSession();
 
   return (
