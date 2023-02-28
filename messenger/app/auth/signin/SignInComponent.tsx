@@ -15,7 +15,7 @@ const SignInComponent = ({ providers }: Props) => {
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
             onClick={() =>
               signIn(provider.id, {
-                callbackUrl: process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000",
+                callbackUrl: process.env.NEXT_AUTH_URL || "http://localhost:3000",
               })
             }
           >
