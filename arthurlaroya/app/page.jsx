@@ -12,11 +12,23 @@ async function getData() {
   *[_type == "project"]
 `);
 
-  return res
+  return res;
+}
+
+async function getSkills() {
+  const res = await client.fetch(`
+  *[_type == 'skill']{
+    skill,
+    "imageUrl": logo.asset->url
+  }
+`);
+
+  return res;
 }
 
 export default async function Page() {
   const data = await getData();
+  const skills = await getSkills();
 
   return (
     <div className="relative min-h-screen">
@@ -24,7 +36,7 @@ export default async function Page() {
       <Header />
       <Landing />
       <Work projects={data} />
-      <Skills />
+      <Skills skills={skills} />
       <Contact />
     </div>
   );

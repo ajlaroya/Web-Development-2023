@@ -1,69 +1,35 @@
 import Image from "next/image";
 import React from "react";
 
-const Skills = () => {
+const Skills = ({ skills }) => {
   return (
     <>
-      <div className="w-full text-center">
+      <div className="w-full pb-32 text-center">
         <span className="text-[80px] tracking-tight sm:text-[101px] md:text-[128px]">
-          "SKILLS"
+          SKILLS
         </span>
       </div>
 
-      {/* Logo strip */}
-      <div className="relative flex flex-col py-32">
-        <div className="flex h-32 w-full gap-10 overflow-hidden marquee">
-
-          <div className="flex h-full w-32 items-center justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png?20220125121207"
-              width={120}
-              height={120}
-              className="grayscale"
-            />
+      {/* Logo cloud */}
+      <div className="mx-10 grid grid-cols-3 justify-center gap-10 mb-32 md:grid-cols-5">
+        {skills.map((skill, index) => (
+          <div
+            className="relative h-20 w-20 justify-center justify-self-center transition duration-200 mb-20 hover:scale-110"
+            key={index}
+          >
+            {skill.imageUrl && (
+              <Image
+                src={skill.imageUrl}
+                alt={skill.skill}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+              />
+            )}
           </div>
-          <div className="flex h-full w-32 items-center justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png?20220125121207"
-              width={120}
-              height={120}
-              className="grayscale"
-            />
-          </div>
-          <div className="flex h-full w-32 items-center justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png?20220125121207"
-              width={120}
-              height={120}
-              className="grayscale"
-            />
-          </div>
-          <div className="flex h-full w-32 items-center justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png?20220125121207"
-              width={120}
-              height={120}
-              className="grayscale"
-            />
-          </div>
-          <div className="flex h-full w-32 items-center justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png?20220125121207"
-              width={120}
-              height={120}
-              className="grayscale"
-            />
-          </div>
-          <div className="flex h-full w-32 items-center justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png?20220125121207"
-              width={120}
-              height={120}
-              className="grayscale"
-            />
-          </div>
-
-        </div>
+        ))}
       </div>
     </>
   );

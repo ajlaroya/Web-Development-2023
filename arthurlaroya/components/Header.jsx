@@ -5,29 +5,29 @@ import Lenis from "@studio-freight/lenis";
 import React from "react";
 import Image from "next/image";
 
-const lenis = new Lenis({
-  duration: 2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-  direction: "vertical", // vertical, horizontal
-  gestureDirection: "vertical", // vertical, horizontal, both
-  smooth: true,
-  mouseMultiplier: 1,
-  smoothTouch: true,
-  touchMultiplier: 10,
-  infinite: false,
-});
+// const lenis = new Lenis({
+//   duration: 2,
+//   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+//   direction: "vertical", // vertical, horizontal
+//   gestureDirection: "vertical", // vertical, horizontal, both
+//   smooth: true,
+//   mouseMultiplier: 1,
+//   smoothTouch: true,
+//   touchMultiplier: 10,
+//   infinite: false,
+// });
 
-//get scroll value
-lenis.on("scroll", ({ scroll, limit, velocity, direction, progress }) => {
-  console.log({ scroll, limit, velocity, direction, progress });
-});
+// //get scroll value
+// lenis.on("scroll", ({ scroll, limit, velocity, direction, progress }) => {
+//   console.log({ scroll, limit, velocity, direction, progress });
+// });
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
 
-requestAnimationFrame(raf);
+// requestAnimationFrame(raf);
 
 const Header = () => {
   return (
@@ -52,6 +52,9 @@ const Header = () => {
           fill
           style={{ objectFit: "cover" }}
           alt="placeholder"
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
         />
         <div className="absolute left-0 bottom-0 z-10 h-36 w-36 mix-blend-difference sm:h-48 sm:w-48 md:bottom-0 md:right-0 md:h-64 md:w-64">
           <Image src="images/arthur.svg" fill alt="placeholder" />

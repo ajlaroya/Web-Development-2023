@@ -12,7 +12,6 @@ const WorkCard = ({ project }) => {
 
   const { title, desc, tech, image } = project;
   const imageUrl = urlFor(image.asset).url();
-  console.log(project)
 
   return (
     <>
@@ -26,6 +25,9 @@ const WorkCard = ({ project }) => {
             src={imageUrl}
             fill
             alt={image.caption}
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
           />
         </div>
 

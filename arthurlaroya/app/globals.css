@@ -8,22 +8,3 @@ html, body {
     scroll-behavor: smooth;
     min-height: 100%
 }
-
-.marquee {
-    top: 0;
-    left: 100%;
-    width: 100%;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    animation: marquee 20s linear infinite;
-}
-
-@keyframes marquee {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -100%
-  }
-}
