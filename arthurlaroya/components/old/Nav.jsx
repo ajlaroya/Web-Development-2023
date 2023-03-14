@@ -1,27 +1,4 @@
-"use client";
-
-import { gsap } from "gsap";
-import { useLayoutEffect, useRef } from "react";
-
 const Nav = () => {
-  // const navRef = useRef();
-
-  // useLayoutEffect(() => {
-  //   console.log(navRef);
-
-  //   gsap.fromTo(
-  //     navRef.current,
-  //     { autoAlpha: 0, y: -100 },
-  //     {
-  //       autoAlpha: 1,
-  //       y: 0,
-  //       duration: 1,
-  //       yoyo: true, // if true > A-B-B-A, if false > A-B-A-B
-  //       yoyoEase: true,
-  //     }
-  //   );
-  // }, []);
-
   return (
     <nav
       className="fixed w-full z-50 top-0 grid grid-cols-2 px-5 sm:px-10 py-5"
