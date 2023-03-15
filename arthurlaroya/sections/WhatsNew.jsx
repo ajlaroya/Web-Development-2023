@@ -23,7 +23,7 @@ const WhatsNew = () => (
         <TypingText title="| Work History" />
         <TitleText title={<>A brief overview of my work history</>} />
         <div className="mt-[48px] flex flex-wrap justify-between gap-[24px]">
-        {newFeatures.map((feature, index) => (
+          {newFeatures.map((feature, index) => (
             <NewFeatures key={feature.title} {...feature} />
           ))}
         </div>
