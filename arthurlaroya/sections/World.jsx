@@ -7,6 +7,7 @@ import { staggerContainer, fadeIn } from "../utils/motion";
 import { TitleText, TypingText } from "../components";
 
 const World = () => (
+  
   <section className={`${styles.paddings} relative z-10`}>
     <motion.div
       variants={staggerContainer}
@@ -27,7 +28,7 @@ const World = () => (
       />
 
       <motion.div
-        variant={fadeIn("up", "tween", 0.3, 1)}
+        variants={fadeIn("up", "tween", 0.3, 1)}
         className="relative mt-[68px] flex h-full w-full md:h-[550px]"
       >
         <img

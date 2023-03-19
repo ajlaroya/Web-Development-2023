@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import styles from "../styles";
 import { staggerContainer } from "../utils/motion";
 import { ExploreCard, TitleText, TypingText } from "../components";
-import { exploreWorlds } from "../constants";
 
-const Explore = () => {
-  const [active, setActive] = useState("world-2");
+const Explore = ({ projects }) => {
+  const [active, setActive] = useState("protean");
+  console.log(projects)
 
   return (
     <section className={`${styles.paddings}`} id="explore">
@@ -31,11 +31,11 @@ const Explore = () => {
           }
           textStyles="text-center"
         />
-        <div className="mt-[50px] flex min-h-[100vh] flex-col gap-2 lg:flex-row">
-          {exploreWorlds.map((world, index) => (
+        <div className="mt-[50px] flex min-h-[200vh] lg:min-h-[100vh] flex-col gap-2 lg:flex-row">
+          {projects.map((project, index) => (
             <ExploreCard
-              key={world.id}
-              {...world}
+              key={index}
+              {...project}
               index={index}
               active={active}
               handleClick={setActive}

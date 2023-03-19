@@ -1,9 +1,3 @@
-// import Nav from "../components/Nav";
-// import Landing from "../components/Landing";
-// import Header from "../components/Header";
-// import Work from "../components/Work";
-// import Skills from "../components/Skills";
-// import Contact from "../components/Contact";
 import { Footer, Navbar } from "../components";
 import {
   About,
@@ -18,9 +12,18 @@ import {
 
 import client from "../client";
 
-async function getData() {
+async function getProjects() {
   const res = await client.fetch(`
-  *[_type == "project"]
+  *[_type == "project"]{
+    desc,
+    externUrl,
+    githubUrl,
+    "imageUrl": image.asset->url,
+    slug,
+    tags,
+    tech,
+    title
+  }
 `);
 
   return res;
@@ -38,7 +41,7 @@ async function getSkills() {
 }
 
 export default async function Page() {
-  const data = await getData();
+  const projects = await getProjects();
   const skills = await getSkills();
 
   return (
@@ -48,7 +51,7 @@ export default async function Page() {
       <div className="relative">
         <About />
         <div className="gradient-03 z-0"/>
-        <Explore />
+        <Explore projects={projects} />
       </div>
       <div className="relative">
         <GetStarted />

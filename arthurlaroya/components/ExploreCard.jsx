@@ -1,44 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import styles from "../styles";
 import { fadeIn } from "../utils/motion";
 
-const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
+const ExploreCard = ({
+  slug,
+  imageUrl,
+  githubUrl,
+  externUrl,
+  tech,
+  title,
+  index,
+  active,
+  handleClick,
+  desc,
+}) => (
   <motion.div
-    variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+    variants={fadeIn("right", "spring", index * 0.2, 0.75)}
     className={`relative ${
-      active === id ? "flex-[10] lg:flex-[3.5]" : "flex-[2] lg:flex-[0.5]"
-    } flex h-[600px] min-w-[170px] cursor-pointer items-center justify-center transition-[flex] duration-[0.7s] ease-out-flex`}
-    onClick={() => handleClick(id)}
+      active === slug.current
+        ? "flex-[18] lg:flex-[4.5]"
+        : "flex-[2] lg:flex-[1]"
+    } flex h-[600px] min-w-[10px] cursor-pointer items-center justify-center transition duration-300 ease-out`}
+    onClick={() => handleClick(slug.current)}
   >
-    <img
-      src={imgUrl}
+    <Image
+      width={800}
+      height={800}
+      src={imageUrl}
       alt={title}
-      className="absolute h-full w-full rounded-xl object-cover"
+      className={`absolute h-full w-full rounded-lg object-cover ${
+        active === slug.current ? "brightness-100" : "brightness-50"
+      } transition duration-500 ease-out hover:brightness-75`}
     />
-    {active !== id ? (
-      <h3 className="absolute z-0 text-[18px] font-semibold text-white sm:text-[26px] lg:bottom-20 lg:origin-[0,0] lg:rotate-[-90deg]">
+    {active !== slug.current ? (
+      <h3 className="absolute z-0 whitespace-nowrap text-xs font-semibold uppercase text-white sm:text-xs lg:origin-[0,0] lg:rotate-[-90deg]">
         {title}
       </h3>
     ) : (
-      <div className="absolute bottom-0 w-full flex-col justify-start rounded-b-xl bg-[rgba(0,0,0,0.5)] p-8">
-        <div
-          className={`${styles.flexCenter} glassmorphism mb-[16px] h-[50px] w-[50px] rounded-xl`}
-        >
-          <img
-            src="/images/headset.svg"
-            alt="headset"
-            className="h-1/2 w-1/2 object-contain"
-          />
+      <div className="absolute bottom-0 w-full flex-col justify-start rounded-b-lg bg-[rgba(0,0,0,0.7)] p-8">
+        <div className="flex flex-row gap-2">
+          <a href={githubUrl} target="_blank">
+            <div
+              className={`${styles.flexCenter} glassmorphism mb-[16px] h-[50px] w-[50px] rounded-xl`}
+            >
+              <Image
+                width={50}
+                height={50}
+                src="/images/github.svg"
+                alt="github"
+                className="h-1/2 w-1/2 object-contain"
+              />
+            </div>
+          </a>
+
+          <a href={externUrl} target="_blank">
+            <div
+              className={`${styles.flexCenter} glassmorphism mb-[16px] h-[50px] w-[50px] rounded-xl`}
+            >
+              <Image
+                width={50}
+                height={50}
+                src="/images/external-link.svg"
+                alt="headset"
+                className="h-1/2 w-1/2 object-contain"
+              />
+            </div>
+          </a>
         </div>
-        <p className="text-[16px] font-normal uppercase leading-[20px] text-white">
-          Enter my project
-        </p>
-        <h2 className="mt-[24px] text-[24px] font-semibold text-white sm:text-[32px]">
+
+        <h2 className="sm:text-md text-lg font-semibold uppercase text-white">
           {title}
         </h2>
+        <p className="w-1/2 justify-center text-sm font-medium text-white md:w-full">
+          {desc}
+        </p>
+
+        <div className="mt-3 flex flex-wrap gap-2">
+          {tech.map((item, index) => (
+            <span
+              key={item}
+              className="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-medium uppercase text-gray-800"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
       </div>
     )}
   </motion.div>
