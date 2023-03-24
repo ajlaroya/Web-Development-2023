@@ -9,7 +9,6 @@ import { ExploreCard, TitleText, TypingText } from "../components";
 
 const Explore = ({ projects }) => {
   const [active, setActive] = useState("protean");
-  console.log(projects)
 
   return (
     <section className={`${styles.paddings}`} id="explore">

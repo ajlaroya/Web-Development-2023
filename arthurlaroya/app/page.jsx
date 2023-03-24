@@ -7,7 +7,7 @@ import {
   Hero,
   Insights,
   WhatsNew,
-  World,
+  Skills,
 } from "../sections";
 
 import client from "../client";
@@ -58,7 +58,7 @@ export default async function Page() {
         <div className="gradient-04 z-0"/>
         <WhatsNew />
       </div>
-      <World />
+      <Skills skills={skills} />
       <div className="relative">
         <Insights />
           <div className="gradient-04 z-0"/>
