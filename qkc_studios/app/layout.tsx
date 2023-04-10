@@ -14,8 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${space_grotesk.className}`}>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body
+        className={`${space_grotesk.className} subpixel-antialiased bg-black text-[#f2f2f2]`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

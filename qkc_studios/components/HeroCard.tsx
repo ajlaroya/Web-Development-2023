@@ -25,10 +25,10 @@ const HeroCard = (props: Props) => {
           <g stroke="currentColor">
             <path
               fill="currentColor"
-              stroke-width="2.747"
+              strokeWidth="2.747"
               d="M5.474 9.268h.646l.412-.498 4.094-4.953v17.848L6.45 17.454l-.403-.407H1.374V9.268h4.1Z"
             ></path>
-            <path stroke-width="2" d="m15.707 9.293 8 8m-8.414 0 8-8"></path>
+            <path strokeWidth="2" d="m15.707 9.293 8 8m-8.414 0 8-8"></path>
           </g>
         </svg>
       </button>
