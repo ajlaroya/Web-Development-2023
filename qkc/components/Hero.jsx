@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-const HeroCard = (props: Props) => {
+const HeroCard = () => {
   return (
     <div className="relative z-10 mb-[19px] md:mb-[26px]">
       <video

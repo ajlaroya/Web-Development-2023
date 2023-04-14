@@ -1,9 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 
-type Props = {};
-
-const ProductCard = ({ product }: any) => {
+const ProductCard = ({ product }) => {
   let dollarAULocale = Intl.NumberFormat("en-AU");
 
   return (
@@ -18,22 +15,19 @@ const ProductCard = ({ product }: any) => {
               className="flex justify-between font-medium trakcing-normal"
             >
               <span>
-                $
-                {dollarAULocale.format(
-                  product.node.priceRange.minVariantPrice.amount
-                )}
+                ${dollarAULocale.format(product.variants[0].price.amount)}
               </span>
-              <span>{product.node.title}</span>
+              <span>{product.title}</span>
             </a>
           </h2>
         </div>
         {/* Card image */}
         <Image
-          src={product.node.featuredImage.url}
-          alt={product.node.featuredImage.alttext ?? "qkc apparel"}
+          src={product.images[0].src}
+          alt={product.imageAlt ?? "qkc apparel"}
           width="1000"
           height="1000"
-          className="max-w-full h-full w-full overflow-clip absolute left-0 top-2 object-cover aspect-auto rounded-lg p-14"
+          className="max-w-full h-full w-full overflow-clip absolute left-0 top-2 object-cover aspect-auto p-14"
         />
       </div>
     </>
