@@ -3,10 +3,11 @@ const menuList = ["Shop", "Search", "About", "Help", "Terms", "Privacy"];
 const Menu = () => {
     return (
       <div
-        className="fixed flex flex-col max-w-full min-w-[420px] h-auto bg-[#1d1d1d] w-[420px] p-[17px] md:bottom-[26px] bottom-[20px] left-[20px] md:left-[26px] overflow-y-auto md:top-[80px] top-[65px] z-[999] rounded-[13px] transition duration-300"
+        id="menu"
+        className="fixed flex flex-col grow max-w-full min-w-[420px] h-auto bg-[#1d1d1d] w-[420px] p-[17px] md:bottom-[26px] bottom-[20px] left-[20px] md:left-[26px] overflow-y-auto md:top-[80px] top-[65px] z-[999] rounded-[13px] transition duration-300"
         aria-hidden="true"
       >
-        {/* <button
+        <button
           className="items-start cursor absolute z-10 top-0 right-0 p-4"
           aria-label="Close"
         >
@@ -25,7 +26,7 @@ const Menu = () => {
               d="m.7.7 30 30M30.7.7l-30 30"
             ></path>
           </svg>
-        </button> */}
+        </button>
         <nav className="mt-10">
           {menuList.map((item, index) => (
             <a

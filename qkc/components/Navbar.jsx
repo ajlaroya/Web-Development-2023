@@ -2,12 +2,32 @@
 
 import { useState } from "react";
 import Menu from "./Menu";
+import Cart from "./Cart";
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
+  const [menuToggle, setMenuToggle] = useState(false);
+  const [cartToggle, setCartToggle] = useState(false);
 
-  const handleToggle = () => {
-    setToggle((prevState) => !prevState); // Approach 1
+  const handleMenuToggle = () => {
+    setMenuToggle((prevState) => !prevState);
+    if (menuToggle) {
+      document.getElementById("page").classList.remove("translate-x-[445px]");
+    } else {
+      document.getElementById("page").classList.add("translate-x-[445px]");
+      document.getElementById("page").classList.remove("-translate-x-[445px]");
+      setCartToggle(false)
+    }
+  };
+
+  const handleCartToggle = () => {
+    setCartToggle((prevState) => !prevState);
+    if (cartToggle) {
+      document.getElementById("page").classList.remove("-translate-x-[445px]");
+    } else {
+      document.getElementById("page").classList.add("-translate-x-[445px]");
+      document.getElementById("page").classList.remove("translate-x-[445px]");
+      setMenuToggle(false)
+    }
   };
 
   return (
@@ -16,7 +36,7 @@ const Navbar = () => {
         <div className="flex justify-between p-[19px] md:p-[26px] md:text-[19px] font-medium">
           <button
             className="cursor-pointer whitespace-nowrap flex hover:text-zinc-500 transition duration-300 ease-in-out tracking-tight"
-            onClick={handleToggle}
+            onClick={handleMenuToggle}
           >
             Menu
             <div className="ml-[4px] top-1">
@@ -43,13 +63,17 @@ const Navbar = () => {
             </a>
           </span>
 
-          <button className="flex whitespace-nowrap hover:text-zinc-500 transition duration-300 ease-in-out cursor-pointer">
+          <button
+            className="flex whitespace-nowrap hover:text-zinc-500 transition duration-300 ease-in-out cursor-pointer"
+            onClick={handleCartToggle}
+          >
             Cart
             <sup className="ml-[4px] top-2 font-mono slashed-zero">0</sup>
           </button>
         </div>
       </nav>
-      {toggle && <Menu />}
+      {menuToggle && <Menu />}
+      {cartToggle && <Cart />}
     </>
   );
 };
