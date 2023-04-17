@@ -6,13 +6,13 @@ const ProductCard = ({ product }) => {
   return (
     <>
       {/* Product cards */}
-      <div className="flex flex-col relative w-auto bg-[#1d1d1d] overflow-hidden aspect-square rounded-[13px] text-[17px] tracking-wide leading-6">
+      <div className="flex flex-col relative w-auto bg-[#1d1d1d] overflow-hidden aspect-square rounded-[13px] text-[17px] tracking-wide leading-6 hover:-translate-y-1 cursor-pointer first:cursor-none transition duration-300">
         {/* Card content */}
         <div className="flex-grow p-[19px] md:p-[22px] z-10 ">
           <h2 className="mt-[-3px]">
             <a
-              href="/"
-              className="flex justify-between font-medium trakcing-normal"
+              href={`/product/${product.handle}`}
+              className="flex justify-between font-medium tracking-normal"
             >
               <span>
                 ${dollarAULocale.format(product.variants[0].price.amount)}
