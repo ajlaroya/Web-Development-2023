@@ -15,7 +15,7 @@ const Navbar = () => {
     } else {
       document.getElementById("page").classList.add("translate-x-[445px]");
       document.getElementById("page").classList.remove("-translate-x-[445px]");
-      setCartToggle(false)
+      setCartToggle(false);
     }
   };
 
@@ -26,20 +26,20 @@ const Navbar = () => {
     } else {
       document.getElementById("page").classList.add("-translate-x-[445px]");
       document.getElementById("page").classList.remove("translate-x-[445px]");
-      setMenuToggle(false)
+      setMenuToggle(false);
     }
   };
 
   return (
     <>
       <nav className="fixed left-0 right-0 top-0 z-[999] bg-black">
-        <div className="flex justify-between p-[19px] md:p-[26px] md:text-[19px] font-medium">
+        <div className="flex justify-between p-[19px] font-medium md:p-[26px] md:text-[19px]">
           <button
-            className="cursor-pointer whitespace-nowrap flex hover:text-zinc-500 transition duration-300 ease-in-out tracking-tight"
+            className="flex cursor-pointer whitespace-nowrap tracking-tight transition duration-300 ease-in-out hover:text-zinc-500"
             onClick={handleMenuToggle}
           >
             Menu
-            <div className="ml-[4px] top-1">
+            <div className="top-1 ml-[4px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="15"
@@ -57,18 +57,18 @@ const Navbar = () => {
             </div>
           </button>
 
-          <span className="hover:text-zinc-500 transition duration-300 ease-in-out cursor-pointer">
+          <span className="cursor-pointer transition duration-300 ease-in-out hover:text-zinc-500">
             <a href="/">
               <div>QKC Studios</div>
             </a>
           </span>
 
           <button
-            className="flex whitespace-nowrap hover:text-zinc-500 transition duration-300 ease-in-out cursor-pointer"
+            className="flex cursor-pointer whitespace-nowrap transition duration-300 ease-in-out hover:text-zinc-500"
             onClick={handleCartToggle}
           >
             Cart
-            <sup className="ml-[4px] top-2 font-mono slashed-zero">0</sup>
+            <sup className="top-2 ml-[4px] font-mono slashed-zero">0</sup>
           </button>
         </div>
       </nav>

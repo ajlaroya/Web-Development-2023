@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${space_grotesk.className} subpixel-antialiased bg-black text-[#f2f2f2] overflow-x-hidden`}
+        className={`${space_grotesk.className} overflow-x-hidden bg-black text-[#f2f2f2] subpixel-antialiased`}
       >
         <Navbar />
         {children}

@@ -12,11 +12,11 @@ const Products = async () => {
   const products = await getProducts();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full h-full ">
+    <div className="grid h-full w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
       {/* Initial card */}
-      <div className="flex relative w-auto bg-[#1d1d1d] overflow-hidden aspect-square rounded-[13px] text-[17px] tracking-wide leading-6">
+      <div className="relative flex aspect-square w-auto overflow-hidden rounded-[13px] bg-[#1d1d1d] text-[17px] leading-6 tracking-wide">
         {/* Card content */}
-        <div className="flex flex-col flex-grow p-[19px] relative z-10">
+        <div className="relative z-10 flex flex-grow flex-col p-[19px]">
           {/* Card title */}
           <h2 className="mb-[17px] mt-[-3px]">
             <span className="flex justify-between font-bold">

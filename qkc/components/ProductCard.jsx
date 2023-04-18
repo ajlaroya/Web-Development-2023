@@ -6,9 +6,9 @@ const ProductCard = ({ product }) => {
   return (
     <>
       {/* Product cards */}
-      <div className="flex flex-col relative w-auto bg-[#1d1d1d] overflow-hidden aspect-square rounded-[13px] text-[17px] tracking-wide leading-6 hover:-translate-y-1 cursor-pointer first:cursor-none transition duration-300">
+      <div className="relative flex aspect-square w-auto cursor-pointer flex-col overflow-hidden rounded-[13px] bg-[#1d1d1d] text-[17px] leading-6 tracking-wide transition duration-300 first:cursor-none hover:-translate-y-1">
         {/* Card content */}
-        <div className="flex-grow p-[19px] md:p-[22px] z-10 ">
+        <div className="z-10 flex-grow p-[19px] md:p-[22px] ">
           <h2 className="mt-[-3px]">
             <a
               href={`/product/${product.handle}`}
@@ -27,7 +27,7 @@ const ProductCard = ({ product }) => {
           alt={product.imageAlt ?? "qkc apparel"}
           width="1000"
           height="1000"
-          className="max-w-full h-full w-full overflow-clip absolute left-0 top-2 object-cover aspect-auto p-14"
+          className="absolute left-0 top-2 aspect-auto h-full w-full max-w-full overflow-clip object-cover p-14"
         />
       </div>
     </>

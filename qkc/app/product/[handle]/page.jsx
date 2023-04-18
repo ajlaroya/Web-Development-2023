@@ -14,10 +14,10 @@ export default async function ProductDetail({ params }) {
   return (
     <main
       id="page"
-      className="flex-col min-w-full pb-[19px] pt-[64px] md:pt-[80px] px-[19px] md:px-[26px] transition duration-300 ease-in overflow-x-hidden"
+      className="min-w-full flex-col overflow-x-hidden px-[19px] pb-[19px] pt-[64px] transition duration-300 ease-in md:px-[26px] md:pt-[80px]"
     >
       {/* Product details */}
-      <div className="flex flex-col md:flex-row-reverse gap-6">
+      <div className="flex flex-col gap-6 md:flex-row-reverse">
         <ProductImage images={images} />
         <ProductDescription
           description={descriptionHtml}

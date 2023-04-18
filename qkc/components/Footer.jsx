@@ -5,10 +5,10 @@ const Footer = () => {
     <footer className="mt-auto pt-6">
       <div className="flex flex-wrap gap-5">
         {/* Newsletter */}
-        <div className="items-center grow flex relative basis-1/3 md:basis-1/4 rounded-xl bg-[#1d1d1d]">
+        <div className="relative flex grow basis-1/3 items-center rounded-xl bg-[#1d1d1d] md:basis-1/4">
           <label
             htmlFor="newsletter"
-            className="items-center flex justify-between py-2 px-5 w-full text-lg h-full"
+            className="flex h-full w-full items-center justify-between px-5 py-2 text-lg"
           >
             Sign up for the next drop
             <div>
@@ -17,7 +17,7 @@ const Footer = () => {
                 width="41.2"
                 height="19.4"
                 viewBox="0 0 41.2 19.4"
-                className="h-5 max-w-[34px] w-8"
+                className="h-5 w-8 max-w-[34px]"
               >
                 <path
                   fill="none"
@@ -31,56 +31,56 @@ const Footer = () => {
         </div>
 
         {/* Email form */}
-        <div className="items-center grow relative flex basis-1/3 md:basis-1/4 rounded-xl bg-[#1d1d1d]">
+        <div className="relative flex grow basis-1/3 items-center rounded-xl bg-[#1d1d1d] md:basis-1/4">
           <form
             action=""
             method="post"
             target="_blank"
-            className="items-center flex w-full h-full"
+            className="flex h-full w-full items-center"
           >
             <input
               type="email"
               name="email"
               placeholder="Email"
               required
-              className="min-h-[68px] mr-[-0.7em] w-full py-2 px-6 bg-[#1d1d1d] cursor rounded-xl appearance-none focus:border-white"
+              className="cursor mr-[-0.7em] min-h-[68px] w-full appearance-none rounded-xl bg-[#1d1d1d] px-6 py-2 focus:border-white"
             />
-            <button className="items-center flex justify-center bg-white text-black py-2 px-6 min-h-[68px] rounded-xl">
+            <button className="flex min-h-[68px] items-center justify-center rounded-xl bg-white px-6 py-2 text-black">
               Subscribe
             </button>
           </form>
         </div>
 
         {/* Payment options */}
-        <div className="relative items-center grow bg-[#1d1d1d] md:basis-1/4 rounded-xl basis-1/3 p-6 flex gap-5">
-          <div className="flex justify-center items-center w-full gap-5">
+        <div className="relative flex grow basis-1/3 items-center gap-5 rounded-xl bg-[#1d1d1d] p-6 md:basis-1/4">
+          <div className="flex w-full items-center justify-center gap-5">
             <Image
               src="https://099.supply/images/payment-providers/visa.svg"
               alt="visa"
               width={65}
               height={22}
-              className="w-auto h-auto max-w-[5rem] max-h-[1rem] overflow-clip"
+              className="h-auto max-h-[1rem] w-auto max-w-[5rem] overflow-clip"
             />
             <Image
               src="https://099.supply/images/payment-providers/mastercard.svg"
               alt="mastercard"
               width={40}
               height={26}
-              className="w-auto h-auto max-w-[5rem] max-h-[1rem] overflow-clip"
+              className="h-auto max-h-[1rem] w-auto max-w-[5rem] overflow-clip"
             />
             <Image
               src="https://099.supply/images/payment-providers/discover.svg"
               alt="discover"
               width={99}
               height={18}
-              className="w-auto h-auto max-w-[5rem] max-h-[1rem] overflow-clip"
+              className="h-auto max-h-[1rem] w-auto max-w-[5rem] overflow-clip"
             />
             <Image
               src="https://099.supply/images/payment-providers/paypal.svg"
               alt="paypal"
               width={81}
               height={22}
-              className="w-auto h-auto max-w-[5rem] max-h-[1rem] overflow-clip"
+              className="h-auto max-h-[1rem] w-auto max-w-[5rem] overflow-clip"
             />
           </div>
         </div>
