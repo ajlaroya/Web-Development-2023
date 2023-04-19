@@ -4,7 +4,7 @@ import { useState } from "react";
 import Menu from "./Menu";
 import Cart from "./Cart";
 
-const Navbar = () => {
+const Navbar = ({ checkout }) => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [cartToggle, setCartToggle] = useState(false);
 
@@ -73,7 +73,7 @@ const Navbar = () => {
         </div>
       </nav>
       {menuToggle && <Menu />}
-      {cartToggle && <Cart />}
+      {cartToggle && <Cart checkout={checkout} />}
     </>
   );
 };

@@ -1,10 +1,9 @@
-const ProductImage = ({ images }) => {
-  const imageSrc = images[0].src;
+const ProductImage = ({ activeProduct }) => {
   return (
     <div className="sticky top-0 flex flex-col md:w-1/2">
       <div className="relative z-10 aspect-square overflow-hidden rounded-xl bg-[#1d1d1d]">
         <img
-          alt="product"
+          alt={activeProduct?.image.altText}
           aria-hidden="true"
           fetchPriority="high"
           loading="eager"
@@ -13,14 +12,14 @@ const ProductImage = ({ images }) => {
           decoding="async"
           data-nimg="1"
           className="absolute left-0 top-0 aspect-auto h-full w-full max-w-full overflow-clip rounded-xl object-cover align-middle transition ease-out"
-          src={imageSrc}
+          src={activeProduct?.image.src}
         />
         <button
           type="button"
           className="inline-block cursor-zoom-in self-start"
         >
           <img
-            alt=""
+            alt={activeProduct?.image.altText}
             itemProp="image"
             fetchPriority="high"
             loading="eager"
@@ -29,7 +28,7 @@ const ProductImage = ({ images }) => {
             decoding="async"
             data-nimg="1"
             className="absolute left-0 top-0 h-full w-full max-w-full overflow-clip rounded-xl object-cover align-middle transition ease-out"
-            src={imageSrc}
+            src={activeProduct?.image.src}
           />
         </button>
       </div>

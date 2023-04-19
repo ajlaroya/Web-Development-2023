@@ -1,7 +1,41 @@
-const ProductDescription = ({ description, title, variants, options }) => {
+"use client";
+
+import { client } from "@/utils/shopify";
+import { useState } from "react";
+
+const ProductDescription = ({
+  product,
+  checkout,
+  activeProduct,
+  selectedProduct,
+  setSelectedProduct
+}) => {
+  const { description, title, variants, options } = product;
   const markup = { __html: description };
   const colourCount = Object.keys(options[0].values).length;
-  console.log(options[0].values);
+  const [activeColour, setActiveColour] = useState(selectedProduct.colour);
+  const [activeSize, setActiveSize] = useState(selectedProduct.size);
+
+  const checkoutId = checkout.id
+  const variantId = activeProduct.id
+
+  const lineItemsToAdd = [
+    {
+      variantId: variantId,
+      quantity: 1,
+    }
+  ];
+  console.log(activeProduct)
+
+  const handleAddToCart = () => {
+    console.log("adding to cart")
+    client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((checkout) => {
+      // Do something with the updated checkout
+      const cart = JSON.parse(JSON.stringify(checkout))
+      console.log(cart); // Array with one additional line item
+    });
+
+  }
 
   return (
     <div className="flex flex-col md:w-1/2">
@@ -38,17 +72,73 @@ const ProductDescription = ({ description, title, variants, options }) => {
         >
           <div className="mb-5">
             <div className="mb-0 flex w-full gap-4">
-              {options[0].values.map((item, index) => (
+              {options[0].values.map((colour, index) => (
                 <div key={index}>
-                  {/* <input
-                    type="radio"
-                    className="block basis-1/3 grow shrink overflow-hidden absolute w-[1px] h-[1px] whitespace-nowrap"
-                  /> */}
-                  <label className="flex grow basis-1/3 cursor-pointer items-center justify-center rounded-lg bg-black px-4 py-2 text-center text-xs ring-1 ring-inset ring-[#1d1d1d] transition duration-300 ease-in-out hover:ring-white md:text-sm">
-                    {item.value}
+                  <label
+                    onClick={() => {
+                      setSelectedProduct({
+                        ...selectedProduct,
+                        colour: colour.value,
+                      });
+                      setActiveColour(colour.value);
+                    }}
+                    className={`${
+                      activeColour === colour.value ? "ring-white" : ""
+                    } flex grow basis-1/3 cursor-pointer items-center justify-center rounded-lg bg-black px-4 py-2 text-center text-xs ring-1 ring-inset ring-[#1d1d1d] transition duration-300 ease-in-out hover:ring-gray-500 md:text-sm`}
+                  >
+                    {colour.value}
                   </label>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Sizes */}
+        <button
+          type="button"
+          data-id=""
+          aria-expanded="false"
+          className="flex w-full cursor-pointer justify-between bg-transparent py-4 text-left transition"
+        >
+          <span aria-hidden="true">Sizes</span>
+          <span>-​</span>
+        </button>
+        <div
+          aria-hidden="true"
+          className="relative max-h-[80px] overflow-hidden border-b transition"
+        >
+          <div className="mb-5">
+            <div className="mb-0 flex w-full gap-4">
+              {/* not all products have sizes so render one size only */}
+              {options[1] ? (
+                options[1].values.map((size, index) => (
+                  <div key={index}>
+                    <label
+                      onClick={() => {
+                        setSelectedProduct({
+                          ...selectedProduct,
+                          size: size.value,
+                        });
+                        setActiveSize(size.value);
+                      }}
+                      className={`${
+                        activeSize === size.value ? "ring-white" : ""
+                      } flex grow basis-1/3 cursor-pointer items-center justify-center rounded-lg bg-black px-4 py-2 text-center text-xs ring-1 ring-inset ring-[#1d1d1d] transition duration-300 ease-in-out hover:ring-gray-500 md:text-sm`}
+                    >
+                      {size.value}
+                    </label>
+                  </div>
+                ))
+              ) : (
+                // ONE SIZE ONLY
+                <div>
+                  <label className="flex grow basis-1/3 cursor-pointer items-center justify-center rounded-lg bg-black px-4 py-2 text-center text-xs ring-1 ring-inset ring-white transition duration-300 ease-in-out hover:ring-gray-500 md:text-sm">
+                    OS
+                  </label>
+                </div>
+              )}
+              {}
             </div>
           </div>
         </div>
@@ -63,16 +153,7 @@ const ProductDescription = ({ description, title, variants, options }) => {
           <span>+​</span>
         </button>
         {/* <div dangerouslySetInnerHTML={markup} className="border-b pb-5" /> */}
-        {/* Shipping */}
-        <button
-          type="button"
-          data-id=""
-          aria-expanded="false"
-          className="flex w-full cursor-pointer justify-between border-b bg-transparent py-5 text-left transition"
-        >
-          <span aria-hidden="true">Shipping</span>
-          <span>+​</span>
-        </button>
+
         {/* <div
         aria-hidden="true"
         className="max-h-full relative overflow-hidden border-b transition"
@@ -112,18 +193,13 @@ const ProductDescription = ({ description, title, variants, options }) => {
       <div className="mt-5 flex gap-5">
         <button
           type="button"
-          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-white px-6 py-4 text-black ring-inset ring-white transition duration-300 ease-in-out hover:bg-[#1d1d1d] hover:text-white hover:ring"
+          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-black px-6 py-4 ring-[0.8px] ring-inset ring-white transition duration-200 hover:text-white hover:ring hover:ring-white"
+          onClick={handleAddToCart}
         >
           Add to Cart{" "}
           <span className="whitespace-nowrap">
-            <span itemProp="price">(${variants[0].price.amount})</span>
+            (${variants[0].price.amount})
           </span>
-        </button>
-        <button
-          type="button"
-          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-[#1d1d1d] px-6 py-4 ring-inset ring-white transition duration-200 hover:bg-black hover:text-white hover:ring"
-        >
-          Get Bundle <span className="whitespace-nowrap">($0)</span>
         </button>
       </div>
     </div>
