@@ -1,41 +1,21 @@
 "use client";
 
-import { client } from "@/utils/shopify";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { addItemToCheckout } from "@/hooks/shopFunctions";
+import { ShopContext } from "@/context/shopContext";
 
-const ProductDescription = ({
+const ProductDetails = ({
   product,
-  checkout,
   activeProduct,
   selectedProduct,
-  setSelectedProduct
+  setSelectedProduct,
 }) => {
+  const { checkout, handleCartToggle, addItemToCheckout } = useContext(ShopContext);
   const { description, title, variants, options } = product;
   const markup = { __html: description };
   const colourCount = Object.keys(options[0].values).length;
   const [activeColour, setActiveColour] = useState(selectedProduct.colour);
   const [activeSize, setActiveSize] = useState(selectedProduct.size);
-
-  const checkoutId = checkout.id
-  const variantId = activeProduct.id
-
-  const lineItemsToAdd = [
-    {
-      variantId: variantId,
-      quantity: 1,
-    }
-  ];
-  console.log(activeProduct)
-
-  const handleAddToCart = () => {
-    console.log("adding to cart")
-    client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((checkout) => {
-      // Do something with the updated checkout
-      const cart = JSON.parse(JSON.stringify(checkout))
-      console.log(cart); // Array with one additional line item
-    });
-
-  }
 
   return (
     <div className="flex flex-col md:w-1/2">
@@ -153,48 +133,17 @@ const ProductDescription = ({
           <span>+​</span>
         </button>
         {/* <div dangerouslySetInnerHTML={markup} className="border-b pb-5" /> */}
-
-        {/* <div
-        aria-hidden="true"
-        className="max-h-full relative overflow-hidden border-b transition"
-      >
-        <div className="mb-5">
-          <table className=" table w-full border-spacing-[2px] border-gray-200 mb-[-20px]">
-            <tbody className="table-row-group align-middle">
-              <tr className="table-row">
-                <th
-                  width="20%"
-                  className="table-cell pr-4 py-2 text-left align-top w-32"
-                >
-                  Dimensions
-                </th>
-                <td className="table-cell py-2">
-                  6000 × 4000 px (72 dpi)
-                </td>
-              </tr>
-              <tr className="table-row">
-                <th className="table-cell pr-4 py-2 text-left align-top w-32">
-                  File Size
-                </th>
-                <td className="table-cell py-2">approx. 150 MB</td>
-              </tr>
-              <tr>
-                <th className="table-cell pr-4 py-2 text-left align-top w-32">
-                  Format
-                </th>
-                <td className="table-cell py-2">Adobe PSD File</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div> */}
       </div>
+
       {/* Button group */}
       <div className="mt-5 flex gap-5">
         <button
           type="button"
-          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-black px-6 py-4 ring-[0.8px] ring-inset ring-white transition duration-200 hover:text-white hover:ring hover:ring-white"
-          onClick={handleAddToCart}
+          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-[#1d1d1d] px-6 py-4 ring-inset transition duration-200 hover:text-white hover:ring-1 hover:ring-white md:text-sm"
+          onClick={(e) => {
+            e.preventDefault();
+            addItemToCheckout(activeProduct.id, 1);
+          }}
         >
           Add to Cart{" "}
           <span className="whitespace-nowrap">
@@ -206,4 +155,4 @@ const ProductDescription = ({
   );
 };
 
-export default ProductDescription;
+export default ProductDetails;

@@ -1,34 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useContext } from "react";
 import Menu from "./Menu";
 import Cart from "./Cart";
+import { ShopContext } from "@/context/shopContext";
 
-const Navbar = ({ checkout }) => {
-  const [menuToggle, setMenuToggle] = useState(false);
-  const [cartToggle, setCartToggle] = useState(false);
-
-  const handleMenuToggle = () => {
-    setMenuToggle((prevState) => !prevState);
-    if (menuToggle) {
-      document.getElementById("page").classList.remove("translate-x-[445px]");
-    } else {
-      document.getElementById("page").classList.add("translate-x-[445px]");
-      document.getElementById("page").classList.remove("-translate-x-[445px]");
-      setCartToggle(false);
-    }
-  };
-
-  const handleCartToggle = () => {
-    setCartToggle((prevState) => !prevState);
-    if (cartToggle) {
-      document.getElementById("page").classList.remove("-translate-x-[445px]");
-    } else {
-      document.getElementById("page").classList.add("-translate-x-[445px]");
-      document.getElementById("page").classList.remove("translate-x-[445px]");
-      setMenuToggle(false);
-    }
-  };
+const Navbar = () => {
+  const {
+    checkout,
+    cartToggle,
+    menuToggle,
+    handleCartToggle,
+    handleMenuToggle,
+  } = useContext(ShopContext);
 
   return (
     <>
@@ -68,7 +52,15 @@ const Navbar = ({ checkout }) => {
             onClick={handleCartToggle}
           >
             Cart
-            <sup className="top-2 ml-[4px] font-mono slashed-zero">0</sup>
+            <sup className="top-1 ml-[4px] font-mono slashed-zero">
+              {
+                checkout.lineItems?.length ||
+                <span className="flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gray-100 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-gray-200"></span>
+                </span>
+              }
+            </sup>
           </button>
         </div>
       </nav>

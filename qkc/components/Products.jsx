@@ -8,6 +8,7 @@ async function getProducts() {
   return JSON.parse(JSON.stringify(products));
 }
 
+// Home page product grid display
 const Products = async () => {
   const products = await getProducts();
 
