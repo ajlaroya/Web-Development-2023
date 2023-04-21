@@ -2,12 +2,12 @@
 import { ShopContext } from "@/context/shopContext";
 import { useContext } from "react";
 
-const Cart = ({ checkout }) => {
-  const { removeItemFromCheckout, handleCartToggle } = useContext(ShopContext);
+const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
+  const { removeItemFromCheckout } = useContext(ShopContext);
 
   return (
     <div
-      className="fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[420px] min-w-[420px] max-w-full flex-col overflow-y-auto rounded-[13px] bg-[#1d1d1d] p-[17px] transition duration-500 md:bottom-[26px] md:right-[26px] md:top-[80px]"
+      className={`${cartToggle ? "opacity-100" : "translate-x-[450px]"} fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[420px] min-w-[420px] max-w-full flex-col overflow-y-auto rounded-[13px] bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:right-[26px] md:top-[80px]`}
       aria-hidden="true"
     >
       <div className="mb-4 flex w-full items-center justify-between border-b pb-4">
@@ -89,7 +89,7 @@ const Cart = ({ checkout }) => {
                   </a>
                 </span>
                 <span className="ml-auto whitespace-nowrap">
-                  ${item.variant.priceV2.amount * item.quantity}
+                  ${Intl.NumberFormat("en-AU").format(item.variant.priceV2.amount * item.quantity)}
                 </span>
                 <a
                   href=""
@@ -125,7 +125,7 @@ const Cart = ({ checkout }) => {
         <div className="mt-auto border-t pt-[1em]">
           <div className="mb-[1em] flex items-start justify-between gap-[0.5em]">
             <span>Subtotal</span>
-            <span>${checkout?.subtotalPrice?.amount}0</span>
+            <span>${Intl.NumberFormat("en-AU").format(checkout?.subtotalPrice?.amount)}</span>
           </div>
           <a href={checkout?.webUrl} target="_blank" rel="noreferrer">
             <button

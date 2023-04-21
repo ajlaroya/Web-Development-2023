@@ -8,6 +8,9 @@ import ShopProvider from "@/context/shopContext";
 export const metadata = {
   title: "QKC Studios",
   description: "next gen apparel",
+  icons: {
+    icon: '/logo.svg',
+  },
 };
 
 const space_grotesk = Space_Grotesk({ subsets: ["latin"] });

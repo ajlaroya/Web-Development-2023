@@ -1,10 +1,10 @@
 const menuList = ["Shop", "Search", "About", "Help", "Terms", "Privacy"];
 
-const Menu = () => {
+const Menu = ({ menuToggle }) => {
   return (
     <div
       id="menu"
-      className="fixed bottom-[20px] left-[20px] top-[65px] z-[999] flex h-auto w-[420px] min-w-[420px] max-w-full grow flex-col overflow-y-auto rounded-[13px] bg-[#1d1d1d] p-[17px] transition duration-300 md:bottom-[26px] md:left-[26px] md:top-[80px]"
+      className={`${menuToggle ? "opacity-100" : "-translate-x-[450px]"} fixed bottom-[20px] left-[20px] top-[65px] z-[999] flex h-auto w-[420px] min-w-[420px] max-w-full grow flex-col overflow-y-auto rounded-[13px] bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:left-[26px] md:top-[80px]`}
       aria-hidden="true"
     >
       <button

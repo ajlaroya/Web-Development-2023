@@ -85,8 +85,8 @@ const ShopProvider = ({ children }) => {
         checkout,
         cartToggle,
         menuToggle,
-        handleCartToggle,
-        handleMenuToggle,
+        setMenuToggle,
+        setCartToggle,
         addItemToCheckout,
         removeItemFromCheckout,
       }}

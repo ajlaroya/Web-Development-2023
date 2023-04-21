@@ -1,7 +1,6 @@
 "use client";
 
 import { useContext, useState } from "react";
-import { addItemToCheckout } from "@/hooks/shopFunctions";
 import { ShopContext } from "@/context/shopContext";
 
 const ProductDetails = ({
@@ -10,10 +9,8 @@ const ProductDetails = ({
   selectedProduct,
   setSelectedProduct,
 }) => {
-  const { checkout, handleCartToggle, addItemToCheckout } = useContext(ShopContext);
+  const { addItemToCheckout } = useContext(ShopContext);
   const { description, title, variants, options } = product;
-  const markup = { __html: description };
-  const colourCount = Object.keys(options[0].values).length;
   const [activeColour, setActiveColour] = useState(selectedProduct.colour);
   const [activeSize, setActiveSize] = useState(selectedProduct.size);
 
@@ -24,7 +21,7 @@ const ProductDetails = ({
         <h1 itemProp="name" className="relative">
           {title}
         </h1>
-        <p>{colourCount} colours</p>
+        <p>${Intl.NumberFormat("en-AU").format(variants[0].price.amount)}</p>
       </div>
       {/* Product SKU */}
       <div className="mt-auto">
@@ -132,7 +129,7 @@ const ProductDetails = ({
           <span aria-hidden="true">Description</span>
           <span>+​</span>
         </button>
-        {/* <div dangerouslySetInnerHTML={markup} className="border-b pb-5" /> */}
+        {/* <div dangerouslySetInnerHTML={ __html: description } className="border-b pb-5" /> */}
       </div>
 
       {/* Button group */}
@@ -145,10 +142,7 @@ const ProductDetails = ({
             addItemToCheckout(activeProduct.id, 1);
           }}
         >
-          Add to Cart{" "}
-          <span className="whitespace-nowrap">
-            (${variants[0].price.amount})
-          </span>
+          Add to Cart
         </button>
       </div>
     </div>

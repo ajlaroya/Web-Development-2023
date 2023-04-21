@@ -10,9 +10,31 @@ const Navbar = () => {
     checkout,
     cartToggle,
     menuToggle,
-    handleCartToggle,
-    handleMenuToggle,
+    setCartToggle,
+    setMenuToggle
   } = useContext(ShopContext);
+
+  const handleCartToggle = () => {
+    setCartToggle((prevState) => !prevState);
+    if (cartToggle) {
+      document.getElementById("page").classList.remove("-translate-x-[445px]");
+    } else {
+      document.getElementById("page").classList.add("-translate-x-[445px]");
+      document.getElementById("page").classList.remove("translate-x-[445px]");
+      setMenuToggle(false);
+    }
+  };
+
+  const handleMenuToggle = () => {
+    setMenuToggle((prevState) => !prevState);
+    if (menuToggle) {
+      document.getElementById("page").classList.remove("translate-x-[445px]");
+    } else {
+      document.getElementById("page").classList.add("translate-x-[445px]");
+      document.getElementById("page").classList.remove("-translate-x-[445px]");
+      setCartToggle(false);
+    }
+  };
 
   return (
     <>
@@ -64,8 +86,8 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      {menuToggle && <Menu />}
-      {cartToggle && <Cart checkout={checkout} />}
+      <Menu menuToggle={menuToggle}/>
+      <Cart checkout={checkout} cartToggle={cartToggle} handleCartToggle={handleCartToggle} />
     </>
   );
 };
