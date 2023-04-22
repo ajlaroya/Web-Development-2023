@@ -11,6 +11,11 @@ export const metadata = {
   icons: {
     icon: '/logo.svg',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 const space_grotesk = Space_Grotesk({ subsets: ["latin"] });

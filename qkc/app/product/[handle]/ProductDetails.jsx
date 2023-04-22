@@ -10,9 +10,10 @@ const ProductDetails = ({
   setSelectedProduct,
 }) => {
   const { addItemToCheckout } = useContext(ShopContext);
-  const { description, title, variants, options } = product;
+  const { descriptionHtml, title, variants, options } = product;
   const [activeColour, setActiveColour] = useState(selectedProduct.colour);
   const [activeSize, setActiveSize] = useState(selectedProduct.size);
+  const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <div className="flex flex-col md:w-1/2">
@@ -40,11 +41,11 @@ const ProductDetails = ({
           aria-expanded="false"
           className="flex w-full cursor-pointer justify-between bg-transparent py-4 text-left transition"
         >
-          <span aria-hidden="true">Colours</span>
+          <span aria-hidden="true">Colour</span>
           <span>-​</span>
         </button>
         <div
-          aria-hidden="true"
+          aria-hidden="false"
           className="relative max-h-[80px] overflow-hidden border-b transition"
         >
           <div className="mb-5">
@@ -78,7 +79,7 @@ const ProductDetails = ({
           aria-expanded="false"
           className="flex w-full cursor-pointer justify-between bg-transparent py-4 text-left transition"
         >
-          <span aria-hidden="true">Sizes</span>
+          <span aria-hidden="true">Size</span>
           <span>-​</span>
         </button>
         <div
@@ -119,17 +120,19 @@ const ProductDetails = ({
             </div>
           </div>
         </div>
+
         {/* Description */}
         <button
           type="button"
           data-id=""
           aria-expanded="false"
-          className="flex w-full cursor-pointer justify-between border-b bg-transparent py-5 text-left transition"
+          className="flex w-full cursor-pointer justify-between bg-transparent py-5 text-left transition"
+          onClick={() => {setIsExpanded(!isExpanded)}}
         >
           <span aria-hidden="true">Description</span>
-          <span>+​</span>
+          <span>{isExpanded ? '-' : '+'}​</span>
         </button>
-        {/* <div dangerouslySetInnerHTML={ __html: description } className="border-b pb-5" /> */}
+        <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className={`${isExpanded ? 'block' : 'hidden'} border-b pb-5 transition duration-300 ease-in-out`} />
       </div>
 
       {/* Button group */}

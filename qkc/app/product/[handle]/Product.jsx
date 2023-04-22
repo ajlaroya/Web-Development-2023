@@ -43,7 +43,7 @@ const Product = ({ product, products }) => {
   return (
     <>
       {/* Product details */}
-      <div className="flex flex-col gap-6 md:flex-row-reverse">
+      <div className="relative flex flex-col gap-6 md:flex-row-reverse">
         <ProductImage activeProduct={activeProduct} />
         <ProductDetails
           product={product}

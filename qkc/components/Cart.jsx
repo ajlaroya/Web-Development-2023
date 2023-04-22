@@ -7,10 +7,12 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
 
   return (
     <div
-      className={`${cartToggle ? "opacity-100" : "translate-x-[450px]"} fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[420px] min-w-[420px] max-w-full flex-col overflow-y-auto rounded-[13px] bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:right-[26px] md:top-[80px]`}
+      className={`${
+        cartToggle ? "opacity-100" : "translate-x-[450px]"
+      } fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[420px] min-w-[420px] max-w-full flex-col overflow-y-auto rounded-[13px] bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:right-[26px] md:top-[80px]`}
       aria-hidden="true"
     >
-      <div className="mb-4 flex w-full items-center justify-between border-b pb-4">
+      <div className="mb-4 flex w-full items-center justify-between border-b border-[hsla(0,0%,100%,.6)] pb-4">
         <h2 className="mt-0 text-lg">Cart</h2>
         <p>{checkout?.lineItems?.length} items</p>
         <button
@@ -42,8 +44,15 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
           className="mb-4 mt-[-17px] list-outside list-none list-image-none"
           key={index}
         >
-          <li className="group relative mx-[-17px] px-[17px] transition duration-500 ease-in-out hover:bg-white hover:text-black">
-            <div className="border-b pb-3 pt-7">
+          <li className="group relative mx-[-17px] flex px-[17px] transition duration-500 ease-in-out hover:bg-white hover:text-black">
+            <div className="flex shrink border-b border-[hsla(0,0%,100%,.6)] items-center">
+              <img
+                src={item.variant.image.src}
+                alt=""
+                className="h-20 w-20 p-1"
+              />
+            </div>
+            <div className="grow border-b border-[hsla(0,0%,100%,.6)] pb-5 pt-8 pl-2">
               <span className="mb-1 flex items-center gap-2">
                 {/* Remove item button */}
                 <button
@@ -89,7 +98,10 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
                   </a>
                 </span>
                 <span className="ml-auto whitespace-nowrap">
-                  ${Intl.NumberFormat("en-AU").format(item.variant.priceV2.amount * item.quantity)}
+                  $
+                  {Intl.NumberFormat("en-AU").format(
+                    item.variant.priceV2.amount * item.quantity
+                  )}
                 </span>
                 <a
                   href=""
@@ -122,10 +134,15 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
 
       {/* Cart subtotal */}
       {checkout?.lineItems?.length > 0 ? (
-        <div className="mt-auto border-t pt-[1em]">
+        <div className="mt-auto pt-[1em]">
           <div className="mb-[1em] flex items-start justify-between gap-[0.5em]">
             <span>Subtotal</span>
-            <span>${Intl.NumberFormat("en-AU").format(checkout?.subtotalPrice?.amount)}</span>
+            <span>
+              $
+              {Intl.NumberFormat("en-AU").format(
+                checkout?.subtotalPrice?.amount
+              )}
+            </span>
           </div>
           <a href={checkout?.webUrl} target="_blank" rel="noreferrer">
             <button
@@ -138,7 +155,7 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
         </div>
       ) : (
         <div className="mt-auto border-t pt-[1em]">
-          <div className="mb-[1em] flex gap-[0.5em] justify-center">
+          <div className="mb-[1em] flex justify-center gap-[0.5em]">
             <span>Your cart is empty</span>
           </div>
         </div>

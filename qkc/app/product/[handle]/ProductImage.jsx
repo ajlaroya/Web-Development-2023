@@ -1,6 +1,6 @@
 const ProductImage = ({ activeProduct }) => {
   return (
-    <div className="sticky top-0 flex flex-col md:w-1/2">
+    <div className="flex-col md:w-1/2 h-full">
       <div className="relative z-10 aspect-square overflow-hidden rounded-xl bg-[#1d1d1d]">
         <img
           alt={activeProduct?.image.altText}
