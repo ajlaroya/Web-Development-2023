@@ -4,7 +4,7 @@ const Menu = ({ menuToggle }) => {
   return (
     <div
       id="menu"
-      className={`${menuToggle ? "opacity-100" : "-translate-x-[450px]"} fixed bottom-[20px] left-[20px] top-[65px] z-[999] flex h-auto w-[420px] min-w-[420px] max-w-full grow flex-col overflow-y-auto rounded-[13px] bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:left-[26px] md:top-[80px]`}
+      className={`${menuToggle ? "opacity-100" : "-translate-x-[450px]"} fixed bottom-[20px] left-[20px] top-[65px] z-[999] flex h-auto w-[290px] min-w-[290px] md:w-[420px] md:min-w-[420px] max-w-full flex-col overflow-y-auto rounded-xl bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:left-[26px] md:top-[80px]`}
       aria-hidden="true"
     >
       <button
@@ -33,7 +33,7 @@ const Menu = ({ menuToggle }) => {
             data-id={index}
             href={`/${item}/`}
             key={index}
-            className="relative mx-[-17px] block cursor-pointer border-b border-white px-[17px] py-5 first:border-t hover:bg-white hover:text-black"
+            className="relative mx-[-17px] flex cursor-pointer border-b border-white px-[17px] py-5 first:border-t hover:bg-white hover:text-black"
           >
             <span className="">{item}</span>
           </a>

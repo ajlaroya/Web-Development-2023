@@ -8,8 +8,10 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
   return (
     <div
       className={`${
-        cartToggle ? "opacity-100" : "translate-x-[450px]"
-      } fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[420px] min-w-[420px] max-w-full flex-col overflow-y-auto rounded-[13px] bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:right-[26px] md:top-[80px]`}
+        cartToggle
+          ? "opacity-100"
+          : "translate-x-[320px] md:translate-x-[445px]"
+      } fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[290px] min-w-[290px] max-w-full flex-col overflow-y-auto rounded-xl bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:right-[26px] md:top-[80px] md:w-[420px] md:min-w-[420px]`}
       aria-hidden="true"
     >
       <div className="mb-4 flex w-full items-center justify-between border-b border-[hsla(0,0%,100%,.6)] pb-4">
@@ -45,14 +47,14 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
           key={index}
         >
           <li className="group relative mx-[-17px] flex px-[17px] transition duration-500 ease-in-out hover:bg-white hover:text-black">
-            <div className="flex shrink border-b border-[hsla(0,0%,100%,.6)] items-center">
+            <div className="flex shrink items-center border-b border-[hsla(0,0%,100%,.6)]">
               <img
                 src={item.variant.image.src}
                 alt=""
                 className="h-20 w-20 p-1"
               />
             </div>
-            <div className="grow border-b border-[hsla(0,0%,100%,.6)] pb-5 pt-8 pl-2">
+            <div className="grow border-b border-[hsla(0,0%,100%,.6)] pb-5 pl-2 pt-8">
               <span className="mb-1 flex items-center gap-2">
                 {/* Remove item button */}
                 <button
@@ -112,7 +114,7 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
               <div className="transition duration-500 group-hover:opacity-0">
                 <ul className="flex">
                   <li className="flex min-w-0 basis-1/2 pl-[0.3em]">
-                    <span className="inline-block flex-1 shrink grow rounded-[0.5em] border border-[#383838] bg-[#383838] px-[6px] py-[2px] text-center align-middle text-xs font-medium leading-[1] text-[hsla(0,0%,100%,.6)]">
+                    <span className="inline-block flex-1 shrink grow whitespace-nowrap rounded-[0.5em] border border-[#383838] bg-[#383838] px-[6px] py-[2px] text-center align-middle text-xs font-medium leading-[1] text-[hsla(0,0%,100%,.6)]">
                       <span className="relative top-[-0.05em]">
                         {item.variant.title}
                       </span>

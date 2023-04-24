@@ -15,7 +15,7 @@ const Products = async () => {
   return (
     <div className="grid h-full w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
       {/* Initial card */}
-      <div className="relative flex aspect-square w-auto overflow-hidden rounded-[13px] bg-[#1d1d1d] text-[17px] leading-6 tracking-wide">
+      <div className="relative flex aspect-square w-auto overflow-hidden rounded-xl bg-[#1d1d1d] text-[17px] leading-6 tracking-wide">
         {/* Card content */}
         <div className="relative z-10 flex flex-grow flex-col p-[19px]">
           {/* Card title */}

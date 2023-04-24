@@ -27,7 +27,7 @@ const ProductDetails = ({
       {/* Product SKU */}
       <div className="mt-auto">
         {/* Flipper */}
-        <div className="relative flex overflow-hidden text-[130px] tracking-tight">
+        <div className="relative flex overflow-hidden text-7xl md:text-9xl tracking-tight py-3">
           QKC
         </div>
       </div>

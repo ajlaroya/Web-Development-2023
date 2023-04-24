@@ -45,7 +45,7 @@ const Footer = () => {
               required
               className="cursor mr-[-1em] min-h-[68px] min-w-[300px] w-full appearance-none rounded-xl bg-[#1d1d1d] px-6 py-2 focus:ring-white ring-inset"
             />
-            <button className="absolute right-0 top-0 flex min-h-[68px] items-center justify-center rounded-tr-xl rounded-br-xl bg-white px-6 py-2 text-black">
+            <button className="absolute right-0 top-0 flex min-h-[68px] items-center justify-center rounded-xl bg-white px-6 py-2 text-black">
               Subscribe
             </button>
           </form>

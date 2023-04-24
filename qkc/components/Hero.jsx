@@ -2,7 +2,7 @@ const HeroCard = () => {
   return (
     <div className="relative z-10 mb-[19px] md:mb-[26px]">
       <video
-        className="left-0 top-0 h-[245px] w-full max-w-full overflow-x-clip overflow-y-clip rounded-[13px] object-cover md:h-[507px]"
+        className="left-0 top-0 h-[245px] w-full max-w-full overflow-x-clip overflow-y-clip rounded-xl object-cover md:h-[507px]"
         muted
         loop
         autoPlay

@@ -5,7 +5,7 @@ const ProductSlider = ({ products }) => {
       {products.map((product, index) => (
         <div
           key={index}
-          className="flex w-[24vw] shrink-0 cursor-pointer snap-start items-center justify-center transition duration-300 ease-in-out hover:-translate-y-1 md:w-[16vw]"
+          className="flex w-[33vw] shrink-0 cursor-pointer snap-start items-center justify-center transition duration-300 ease-in-out hover:-translate-y-1 md:w-[16vw]"
         >
           <div className="relative flex aspect-square w-full flex-col overflow-hidden rounded-xl bg-[#1d1d1d]">
             <div className="relative z-10 grow p-4">
