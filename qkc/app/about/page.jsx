@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+
 export default function About() {
   return (
     <main
@@ -56,6 +58,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

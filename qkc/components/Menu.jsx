@@ -31,7 +31,7 @@ const Menu = ({ menuToggle }) => {
         {menuList.map((item, index) => (
           <a
             data-id={index}
-            href={`/${item}/`}
+            href={`/${item.toLowerCase()}/`}
             key={index}
             className="relative mx-[-17px] flex cursor-pointer border-b border-white px-[17px] py-5 first:border-t hover:bg-white hover:text-black"
           >
