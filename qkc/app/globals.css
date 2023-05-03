@@ -7,7 +7,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: black;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -15,4 +15,24 @@
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
+}
+
+.product-card {
+  display: block;
+  animation-name: animateIn;
+  animation-duration: 650ms;
+  animation-delay: calc(var(--animation-order) * 300ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes animateIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(-8px);
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

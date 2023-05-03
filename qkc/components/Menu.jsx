@@ -1,10 +1,12 @@
-const menuList = ["Shop", "Search", "About", "Help", "Terms", "Privacy"];
+const menuList = ["Shop", "About", "Help", "Terms", "Privacy"];
 
 const Menu = ({ menuToggle }) => {
   return (
     <div
       id="menu"
-      className={`${menuToggle ? "opacity-100" : "-translate-x-[450px]"} fixed bottom-[20px] left-[20px] top-[65px] z-[999] flex h-auto w-[290px] min-w-[290px] md:w-[420px] md:min-w-[420px] max-w-full flex-col overflow-y-auto rounded-xl bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:left-[26px] md:top-[80px]`}
+      className={`${
+        menuToggle ? "opacity-100" : "-translate-x-[450px]"
+      } fixed bottom-[20px] left-[20px] top-[65px] z-[999] flex h-auto w-[290px] min-w-[290px] max-w-full flex-col overflow-y-auto rounded-xl bg-[#1d1d1d] p-[1em] transition duration-300 ease-in-out sm:bottom-[26px] sm:left-[26px] sm:w-[420px] sm:min-w-[420px] md:top-[80px]`}
       aria-hidden="true"
     >
       <button
@@ -27,23 +29,51 @@ const Menu = ({ menuToggle }) => {
           ></path>
         </svg>
       </button>
-      <nav className="mt-10">
+      <nav className="mt-[2.2em]">
         {menuList.map((item, index) => (
           <a
             data-id={index}
             href={`/${item.toLowerCase()}/`}
             key={index}
-            className="relative mx-[-17px] flex cursor-pointer border-b border-white px-[17px] py-5 first:border-t hover:bg-white hover:text-black"
+            className="relative mx-[-1em] block cursor-pointer border-b border-[hsla(0,0%,100%,.6)] px-[1em] transition duration-300 ease-in-out first:border-t hover:bg-white hover:text-black"
           >
-            <span className="">{item}</span>
+            <span className="block py-[1em]">{item}</span>
           </a>
         ))}
       </nav>
-      <nav className="grid h-full w-full content-center">
-        <ul className="flex justify-around">
-          <li className="cursor-pointer">Facebook</li>
-          <li className="cursor-pointer">Instagram</li>
-          <li className="cursor-pointer">Spotify</li>
+      {/* sublist */}
+      <nav className="mt-auto pt-5">
+        <ul className="flex flex-col gap-[0.3em]">
+          <li>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-block transition"
+              href="https://twitter.com/099supply"
+            >
+              <span>Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-block transition"
+              href="https://www.instagram.com/099supply"
+            >
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-block transition"
+              href="https://www.pinterest.com/099supply"
+            >
+              <span>Facebook</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>

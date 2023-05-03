@@ -5,23 +5,27 @@ const AccordionItem = ({ question, answer, index }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="collapse" 
-    key={index}>
-        <input type="checkbox" 
-        onClick={() => setExpanded(!expanded)} />
+    <div className="collapse" key={index}>
+      <input type="checkbox" onClick={() => setExpanded(!expanded)} />
       <div
-        className={`${expanded ? "" : ""} w-full flex justify-between text-xl collapse-title py-5 !px-0`}
+        className={`${
+          expanded ? "" : ""
+        } collapse-title flex w-full justify-between !px-0 py-7 text-xl`}
       >
-        <h1 className="w-1/3 hidden md:block">0{index}</h1>
-        <div className="flex w-full md:w-2/3 justify-between font-bold">
+        <h1 className="hidden w-1/3 md:block">0{index}</h1>
+        <div className="flex w-full justify-between font-bold md:w-2/3">
           <p>{question}</p>
           <span>{expanded ? "-" : "+"}</span>
         </div>
       </div>
 
-      <div className={`${expanded ? "" : ""} collapse-content flex border-b text-xl transition ease-in-out delay-300 !px-0`}>
+      <div
+        className={`${
+          expanded ? "" : ""
+        } collapse-content flex border-b !px-0 text-xl transition delay-300 ease-in-out`}
+      >
         <span className="hidden w-1/3 md:block"></span>
-        <div className="w-full md:w-2/3 text-left pb-3">
+        <div className="w-full pb-3 text-left md:w-2/3">
           <p>{answer}</p>
         </div>
       </div>

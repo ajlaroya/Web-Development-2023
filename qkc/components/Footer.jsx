@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="relative flex grow basis-full items-center rounded-xl bg-[#1d1d1d] sm:basis-1/3 md:basis-1/4">
           <label
             htmlFor="newsletter"
-            className="flex h-full w-full min-h-[68px] items-center justify-between px-5 py-2 text-lg"
+            className="flex h-full min-h-[68px] w-full items-center justify-between px-5 py-2 text-lg"
           >
             Sign up for the next drop
             <div>
@@ -36,14 +36,14 @@ const Footer = () => {
             action=""
             method="post"
             target="_blank"
-            className="flex h-full w-full items-center relative"
+            className="relative flex h-full w-full items-center"
           >
             <input
               type="email"
               name="email"
               placeholder="Email"
               required
-              className="cursor mr-[-1em] min-h-[68px] min-w-[300px] w-full appearance-none rounded-xl bg-[#1d1d1d] px-6 py-2 focus:ring-white ring-inset"
+              className="cursor mr-[-1em] min-h-[68px] w-full min-w-[300px] appearance-none rounded-xl bg-[#1d1d1d] px-6 py-2 ring-inset focus:ring-white"
             />
             <button className="absolute right-0 top-0 flex min-h-[68px] items-center justify-center rounded-xl bg-white px-6 py-2 text-black">
               Subscribe

@@ -39,8 +39,8 @@ const Products = async () => {
       </div>
 
       {/* Product cards */}
-      {products.map((product) => {
-        return <ProductCard key={product.id} product={product} />;
+      {products.map((product, index) => {
+        return <ProductCard key={product.id} product={product} index={index} />;
       })}
     </div>
   );

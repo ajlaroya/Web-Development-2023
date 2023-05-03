@@ -10,8 +10,8 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
       className={`${
         cartToggle
           ? "opacity-100"
-          : "translate-x-[320px] md:translate-x-[445px]"
-      } fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[290px] min-w-[290px] max-w-full flex-col overflow-y-auto rounded-xl bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out md:bottom-[26px] md:right-[26px] md:top-[80px] md:w-[420px] md:min-w-[420px]`}
+          : "translate-x-[320px] md:translate-x-[450px]"
+      } fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[290px] min-w-[290px] max-w-full flex-col overflow-y-auto rounded-xl bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out sm:w-[420px] sm:min-w-[420px] md:bottom-[26px] md:right-[26px] md:top-[80px]`}
       aria-hidden="true"
     >
       <div className="mb-4 flex w-full items-center justify-between border-b border-[hsla(0,0%,100%,.6)] pb-4">

@@ -4,6 +4,7 @@ import { useContext } from "react";
 import Menu from "./Menu";
 import Cart from "./Cart";
 import { ShopContext } from "@/context/shopContext";
+import { Bars3Icon, ShoppingBagIcon } from "@heroicons/react/24/solid";
 
 const Navbar = () => {
   const { checkout, cartToggle, menuToggle, setCartToggle, setMenuToggle } =
@@ -35,40 +36,23 @@ const Navbar = () => {
     <>
       <nav className="fixed left-0 right-0 top-0 z-[999] bg-black">
         <div className="flex justify-between p-[19px] font-medium md:p-[26px] md:text-[19px]">
-          <button
-            className="flex cursor-pointer whitespace-nowrap transition duration-300 ease-in-out hover:text-zinc-500"
-            onClick={handleMenuToggle}
-          >
-            Menu
-            <div className="ml-[4px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="8"
-                viewBox="0 0 15 8"
-                className=""
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  d="M0 1h15M0 7h15"
-                ></path>
-              </svg>
-            </div>
-          </button>
+          <label className="swap-rotate swap cursor-pointer whitespace-nowrap transition duration-300 ease-in-out hover:text-zinc-400">
+            <input type="checkbox" onClick={handleMenuToggle} />
+            <Bars3Icon className="swap-on h-6 w-6" />
+            <Bars3Icon className="swap-off h-6 w-6" />
+          </label>
 
-          <span className="cursor-pointer transition duration-300 ease-in-out hover:text-zinc-500">
+          <span className="cursor-pointer font-bold hover:text-zinc-400">
             <a href="/">
-              <div>QKC Studios</div>
+              <div>QKC Studios®</div>
             </a>
           </span>
 
           <button
-            className="flex cursor-pointer whitespace-nowrap transition duration-300 ease-in-out hover:text-zinc-500"
+            className="flex cursor-pointer whitespace-nowrap transition duration-300 ease-in-out hover:text-zinc-400"
             onClick={handleCartToggle}
           >
-            Cart
+            <ShoppingBagIcon className="h-6 w-6" />
             <sup className="top-1 ml-[4px] font-mono slashed-zero">
               {checkout.lineItems?.length || (
                 <span className="flex h-2 w-2">
