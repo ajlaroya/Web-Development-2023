@@ -1,14 +1,25 @@
+'use client';
+
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
+import { useEffect } from "react";
 
 const ProductCard = ({ product, index }) => {
   let dollarAULocale = Intl.NumberFormat("en-AU");
+  const router = useRouter();
+
+  useEffect(() => {
+    // Prefetch the dashboard page
+    router.prefetch(`/product/${product.handle}`);
+  }, [router]);
 
   return (
     <>
       {/* Product cards */}
       <div
-        className="product-card relative flex aspect-square w-auto cursor-pointer flex-col overflow-hidden rounded-xl bg-[#1d1d1d] text-[17px] leading-6 tracking-wide transition duration-300 first:cursor-none hover:-translate-y-1"
+        className="relative flex aspect-square w-auto cursor-pointer flex-col overflow-hidden rounded-xl bg-[#1d1d1d] text-[17px] transition duration-300 ease-in-out first:cursor-none hover:-translate-y-2"
         style={{ "--animation-order": `${index + 1}` }}
+        onClick={() => router.push(`/product/${product.handle}`)}
       >
         {/* Card content */}
         <div className="z-10 flex-grow p-[19px] md:p-[22px] ">

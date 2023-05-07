@@ -1,14 +1,18 @@
 const HeroCard = () => {
   return (
-    <div className="relative z-10 mb-[19px] md:mb-[26px]">
+    <div className="md:mb-[26px] relative z-10 mb-[19px]">
       <video
-        className="left-0 top-0 h-[245px] w-full max-w-full overflow-x-clip overflow-y-clip rounded-xl object-cover md:h-[507px]"
+        className="md:h-[507px] left-0 top-0 h-[245px] w-full max-w-full overflow-x-clip overflow-y-clip rounded-xl object-cover"
         muted
         loop
         autoPlay
         playsInline
-        src="https://099.supply/media/hero-desktop.mp4"
+        src="/hero.mp4"
       />
+      <div class="absolute left-0 top-0 flex flex-col h-full w-full items-center justify-center font-bold tracking-tight text-white mix-blend-overlay bg-black/30">
+        <p className="text-5xl">Quiet Kids Club®</p>
+        <p className="text-2xl">coming soon.</p>
+      </div>
       <button className="absolute bottom-0 right-0 items-start overflow-x-visible overflow-y-visible p-[26px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"

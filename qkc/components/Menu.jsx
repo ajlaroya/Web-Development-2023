@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const menuList = ["Shop", "About", "Help", "Terms", "Privacy"];
 
 const Menu = ({ menuToggle }) => {
@@ -43,36 +45,57 @@ const Menu = ({ menuToggle }) => {
       </nav>
       {/* sublist */}
       <nav className="mt-auto pt-5">
-        <ul className="flex flex-col gap-[0.3em]">
+        <ul className="flex flex-col gap-2">
           <li>
-            <a
+            <Image
+              src="twitter.svg"
+              alt="visa"
+              width={50}
+              height={50}
+              className="h-8 w-8"
+            />
+            {/* <a
               target="_blank"
               rel="noreferrer noopener"
               className="inline-block transition"
               href="https://twitter.com/099supply"
             >
               <span>Twitter</span>
-            </a>
+            </a> */}
           </li>
           <li>
-            <a
+            <Image
+              src="instagram.svg"
+              alt="instagram"
+              width={50}
+              height={50}
+              className="h-8 w-8"
+            />
+            {/* <a
               target="_blank"
               rel="noreferrer noopener"
               className="inline-block transition"
               href="https://www.instagram.com/099supply"
             >
               <span>Instagram</span>
-            </a>
+            </a> */}
           </li>
           <li>
-            <a
+            <Image
+              src="facebook.svg"
+              alt="facebook"
+              width={50}
+              height={50}
+              className="h-8 w-8"
+            />
+            {/* <a
               target="_blank"
               rel="noreferrer noopener"
               className="inline-block transition"
               href="https://www.pinterest.com/099supply"
             >
               <span>Facebook</span>
-            </a>
+            </a> */}
           </li>
         </ul>
       </nav>

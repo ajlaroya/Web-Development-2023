@@ -1,14 +1,22 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Menu from "./Menu";
 import Cart from "./Cart";
 import { ShopContext } from "@/context/shopContext";
 import { Bars3Icon, ShoppingBagIcon } from "@heroicons/react/24/solid";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const { checkout, cartToggle, menuToggle, setCartToggle, setMenuToggle } =
     useContext(ShopContext);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    // Prefetch the dashboard page
+    router.prefetch(`/`);
+  }, [router]);
 
   const handleCartToggle = () => {
     setCartToggle((prevState) => !prevState);
@@ -42,7 +50,7 @@ const Navbar = () => {
             <Bars3Icon className="swap-off h-6 w-6" />
           </label>
 
-          <span className="cursor-pointer font-bold hover:text-zinc-400">
+          <span className="cursor-pointer font-bold transition duration-300 ease-in hover:text-zinc-400">
             <a href="/">
               <div>QKC Studios®</div>
             </a>

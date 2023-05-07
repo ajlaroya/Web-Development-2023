@@ -1,5 +1,6 @@
 "use client";
 import { ShopContext } from "@/context/shopContext";
+import Image from "next/image";
 import { useContext } from "react";
 
 const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
@@ -10,7 +11,7 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
       className={`${
         cartToggle
           ? "opacity-100"
-          : "translate-x-[320px] md:translate-x-[450px]"
+          : "translate-x-[320px] sm:translate-x-[450px]"
       } fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[290px] min-w-[290px] max-w-full flex-col overflow-y-auto rounded-xl bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out sm:w-[420px] sm:min-w-[420px] md:bottom-[26px] md:right-[26px] md:top-[80px]`}
       aria-hidden="true"
     >
@@ -48,9 +49,11 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
         >
           <li className="group relative mx-[-17px] flex px-[17px] transition duration-500 ease-in-out hover:bg-white hover:text-black">
             <div className="flex shrink items-center border-b border-[hsla(0,0%,100%,.6)]">
-              <img
+              <Image
                 src={item.variant.image.src}
-                alt=""
+                alt={item.title}
+                width={150}
+                height={150}
                 className="h-20 w-20 p-1"
               />
             </div>
