@@ -9,7 +9,7 @@ const HeroCard = () => {
         playsInline
         src="/hero.mp4"
       />
-      <div class="absolute left-0 top-0 flex flex-col h-full w-full items-center justify-center font-bold tracking-tight text-white mix-blend-overlay bg-black/30">
+      <div className="absolute left-0 top-0 flex flex-col h-full w-full items-center justify-center font-bold tracking-tight text-white mix-blend-overlay bg-black/30">
         <p className="text-5xl">Quiet Kids Club®</p>
         <p className="text-2xl">coming soon.</p>
       </div>

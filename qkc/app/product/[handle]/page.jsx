@@ -1,6 +1,20 @@
 import Product from "@/app/product/[handle]/Product";
 import { getProducts, getProduct } from "@/hooks/shopFunctions";
 
+export async function generateMetadata({ params }) {
+  const handle = params.handle;
+  const product = await getProduct(handle);
+
+  return {
+    title: `${product.title} | QKC Studios®`,
+    description: "minimal, modern, and affordable clothing brand for introverts",
+    referrer: "origin-when-cross-origin",
+    keywords: ["minimal", "modern", "affordable", "clothing", "brand", "introverts", "fashion", "men", "women", "kids", "accessories", "shoes", "clothing"],
+    colorScheme: "dark",
+    creator: "Arthur Laroya",
+  };
+}
+
 export default async function ProductDetail({ params }) {
   const handle = params.handle;
   const productData = getProduct(handle);

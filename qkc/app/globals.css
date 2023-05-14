@@ -17,6 +17,10 @@
   background-clip: content-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .product-card {
   display: block;
   animation-name: animateIn;

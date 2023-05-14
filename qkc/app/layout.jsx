@@ -6,15 +6,24 @@ import Navbar from "@/components/Navbar";
 import ShopProvider from "@/context/shopContext";
 
 export const metadata = {
-  title: "QKC Studios",
-  description: "next gen apparel",
+  title: "Minimal, modern, cozy apparel | QKC Studios®",
+  description: "minimal, modern, and affordable clothing brand for introverts",
+  favicon: "/logo.svg",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "minimal",
+    "modern",
+    "affordable",
+    "clothing",
+    "brand",
+    "introverts",
+    "fashion",
+    "clothing",
+  ],
+  colorScheme: "dark",
+  creator: "Arthur Laroya",
   icons: {
-    icon: '/logo.svg',
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
+    icon: "/logo.svg",
   },
 };
 
