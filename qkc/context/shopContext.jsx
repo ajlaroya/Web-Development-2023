@@ -28,6 +28,12 @@ const ShopProvider = ({ children }) => {
   const fetchCheckout = async (checkoutId) => {
     client.checkout.fetch(checkoutId).then((checkout) => {
       console.log("existing checkout. fetching...");
+      
+      if(checkout.completedAt) {
+        console.log("checkout completed, removing checkout")
+        sessionStorage.removeItem("checkout_id")
+      }
+      
       setCheckout(checkout);
     });
   };

@@ -61,13 +61,8 @@ const Navbar = () => {
             onClick={handleCartToggle}
           >
             <ShoppingBagIcon className="h-6 w-6" />
-            <sup className="top-1 ml-[4px] font-mono slashed-zero">
-              {checkout.lineItems?.length || (
-                <span className="flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gray-100 opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-gray-200"></span>
-                </span>
-              )}
+            <sup className="top-1 ml-[3.5px] font-mono slashed-zero">
+              {checkout.lineItems?.length}
             </sup>
           </button>
         </div>

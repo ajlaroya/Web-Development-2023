@@ -5,7 +5,6 @@ import { useContext } from "react";
 
 const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
   const { removeItemFromCheckout } = useContext(ShopContext);
-
   return (
     <div
       className={`${

@@ -30,7 +30,7 @@ const ProductSlider = ({ products }) => {
               width="1500"
               height="1000"
               src={product.images[0].src}
-              className="absolute left-0 top-0 aspect-auto h-full w-full max-w-full rounded-lg object-cover"
+              className="absolute left-0 top-0 aspect-auto h-full w-full max-w-full rounded-lg object-cover p-10"
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import LoginButton from "@/components/LoginButton";
 import Products from "@/components/Products";
 
 export default function Home() {

@@ -11,6 +11,7 @@ function convert(color) {
     slate: "#B8BEC3",
     chalk: "#FFFFFF",
     indigo: "#202A44",
+    spruce: '#0a5f38'
   };
 
   if (typeof colours[color.toLowerCase()] != "undefined")
@@ -29,8 +30,6 @@ const ProductDetails = ({
   const [activeColour, setActiveColour] = useState(selectedProduct.colour);
   const [activeSize, setActiveSize] = useState(selectedProduct.size);
   const [isExpanded, setIsExpanded] = useState(false);
-
-  console.log(product);
 
   return (
     <div className="flex flex-col md:w-1/2">

@@ -48,7 +48,7 @@ const Menu = ({ menuToggle }) => {
         <ul className="flex flex-col gap-2">
           <li>
             <Image
-              src="twitter.svg"
+              src="/twitter.svg"
               alt="visa"
               width={50}
               height={50}
@@ -65,7 +65,7 @@ const Menu = ({ menuToggle }) => {
           </li>
           <li>
             <Image
-              src="instagram.svg"
+              src="/instagram.svg"
               alt="instagram"
               width={50}
               height={50}
@@ -82,7 +82,7 @@ const Menu = ({ menuToggle }) => {
           </li>
           <li>
             <Image
-              src="facebook.svg"
+              src="/facebook.svg"
               alt="facebook"
               width={50}
               height={50}

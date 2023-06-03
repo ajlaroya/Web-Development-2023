@@ -34,6 +34,7 @@ const Footer = () => {
         <div className="relative flex grow basis-full items-center rounded-xl bg-[#1d1d1d] sm:basis-1/3 md:basis-1/4">
           <form
             action=""
+            id="newsletter"
             method="post"
             target="_blank"
             className="relative flex h-full w-full items-center"
@@ -69,11 +70,11 @@ const Footer = () => {
               className="h-auto max-h-[1rem] w-auto max-w-[5rem] overflow-clip"
             />
             <Image
-              src="https://099.supply/images/payment-providers/discover.svg"
-              alt="discover"
-              width={99}
-              height={18}
-              className="h-auto max-h-[1rem] w-auto max-w-[5rem] overflow-clip"
+              src="/afterpay.svg"
+              alt="afterpay"
+              width={50}
+              height={26}
+              className="h-auto max-h-[4rem] w-auto max-w-[5rem] overflow-clip"
             />
             <Image
               src="https://099.supply/images/payment-providers/paypal.svg"
