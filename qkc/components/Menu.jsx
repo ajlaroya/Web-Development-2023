@@ -44,9 +44,9 @@ const Menu = ({ menuToggle }) => {
         ))}
       </nav>
       {/* sublist */}
-      <nav className="mt-auto pt-5">
-        <ul className="flex flex-col gap-2">
-          <li>
+      <div className="mt-auto pt-5">
+        <div className="flex gap-2">
+          <a href="https://twitter.com/">
             <Image
               src="/twitter.svg"
               alt="visa"
@@ -54,16 +54,8 @@ const Menu = ({ menuToggle }) => {
               height={50}
               className="h-8 w-8"
             />
-            {/* <a
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-block transition"
-              href="https://twitter.com/099supply"
-            >
-              <span>Twitter</span>
-            </a> */}
-          </li>
-          <li>
+          </a>
+          <a href="https://instagram.com/">
             <Image
               src="/instagram.svg"
               alt="instagram"
@@ -71,16 +63,9 @@ const Menu = ({ menuToggle }) => {
               height={50}
               className="h-8 w-8"
             />
-            {/* <a
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-block transition"
-              href="https://www.instagram.com/099supply"
-            >
-              <span>Instagram</span>
-            </a> */}
-          </li>
-          <li>
+          </a>
+
+          <a href="https://facebook.com/">
             <Image
               src="/facebook.svg"
               alt="facebook"
@@ -88,17 +73,9 @@ const Menu = ({ menuToggle }) => {
               height={50}
               className="h-8 w-8"
             />
-            {/* <a
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-block transition"
-              href="https://www.pinterest.com/099supply"
-            >
-              <span>Facebook</span>
-            </a> */}
-          </li>
-        </ul>
-      </nav>
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

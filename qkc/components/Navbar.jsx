@@ -62,7 +62,7 @@ const Navbar = () => {
           >
             <ShoppingBagIcon className="h-6 w-6" />
             <sup className="top-1 ml-[3.5px] font-mono slashed-zero">
-              {checkout.lineItems?.length}
+              {checkout.lineItems?.length != 0 && checkout.lineItems?.length }
             </sup>
           </button>
         </div>

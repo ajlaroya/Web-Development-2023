@@ -28,7 +28,7 @@ const ProductCard = ({ product, index }) => {
       >
         {/* Card content */}
         <div className="z-10 flex-grow p-[19px] md:p-[22px] ">
-          <h2 className="mt-[-3px]">
+          <span className="mt-[-3px]">
             <a
               href={`/product/${product.handle}`}
               className="flex justify-between font-medium tracking-normal"
@@ -38,7 +38,7 @@ const ProductCard = ({ product, index }) => {
               </span>
               <span>{product.title}</span>
             </a>
-          </h2>
+          </span>
         </div>
         {/* Card image */}
         <Image

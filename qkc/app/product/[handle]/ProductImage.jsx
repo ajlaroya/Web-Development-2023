@@ -1,6 +1,14 @@
-import Image from "next/image";
+'use client' 
 
-const ProductImage = ({ activeProduct, images }) => {
+import Image from "next/image";
+import Loader from "@/components/Loader";
+
+const imageLoader = () => {
+  return `http://samherbert.net/svg-loaders/svg-loaders/bars.svg`
+}
+
+const ProductImage = ({ activeProduct }) => {
+
   return (
     <>
       <div className="h-full flex-col md:w-1/2">
@@ -13,9 +21,10 @@ const ProductImage = ({ activeProduct, images }) => {
               alt={activeProduct?.image.altText || activeProduct.title}
               width="1500"
               height="1000"
-              className="absolute left-0 top-0 h-full w-full max-w-full overflow-clip rounded-xl object-cover align-middle transition ease-out"
+              className="scale-75 absolute left-0 top-0 h-full w-full max-w-full overflow-clip rounded-xl object-cover align-middle transition hover:scale-150 ease-in-out duration-150"
               src={activeProduct?.image.src}
               priority
+              placeholder={imageLoader}
             />
           </button>
         </div>

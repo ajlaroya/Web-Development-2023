@@ -10,10 +10,10 @@ const HeroCard = () => {
         src="/hero.mp4"
       />
       <div className="absolute left-0 top-0 flex flex-col h-full w-full items-center justify-center font-bold tracking-tight text-white mix-blend-overlay bg-black/30">
-        <p className="text-5xl">Quiet Kids Club®</p>
-        <p className="text-2xl">coming soon.</p>
+        <p className="text-2xl md:text-5xl">Quiet Kids Club®</p>
+        <p className="text-lg md:text-2xl">coming late July 2023</p>
       </div>
-      <button className="absolute bottom-0 right-0 items-start overflow-x-visible overflow-y-visible p-[26px]">
+      {/* <button className="absolute bottom-0 right-0 items-start overflow-x-visible overflow-y-visible p-[26px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
@@ -31,7 +31,7 @@ const HeroCard = () => {
             <path strokeWidth="2" d="m15.707 9.293 8 8m-8.414 0 8-8"></path>
           </g>
         </svg>
-      </button>
+      </button> */}
     </div>
   );
 };

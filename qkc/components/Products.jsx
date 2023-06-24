@@ -26,7 +26,7 @@ const Products = async () => {
           </h2>
           {/* Card desc */}
           <div>
-            <p className="text-justify italic">
+            <p className="text-center text-sm italic">
               QKC Studios is an apparel line that celebrates the unique
               qualities of introverts. All of the designs are inspired by
               introversion and feature bold statements. QKC Studios is committed

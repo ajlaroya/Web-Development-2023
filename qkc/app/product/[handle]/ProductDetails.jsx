@@ -46,6 +46,10 @@ const ProductDetails = ({
         {/* <div className="relative flex overflow-hidden py-3 text-lg md:text-xl">
         The QKC Cozy '22 Hoodie is constructed from a 8 oz cotton-polyester blend and brushed for extra softness and warmth, without losing breathability. The garment also features the Quiet Kids Club logo across the front and a kangaroo pocket. Appears in a loose, boxy silhouette.
         </div> */}
+        <div
+          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+          className="border-b pb-5 transition duration-300 ease-in-out"
+        />
       </div>
 
       {/* Accordion */}
@@ -139,7 +143,7 @@ const ProductDetails = ({
         </div>
 
         {/* Description */}
-        <button
+        {/* <button
           type="button"
           data-id=""
           aria-expanded="false"
@@ -156,7 +160,7 @@ const ProductDetails = ({
           className={`${
             isExpanded ? "block" : "hidden"
           } border-b pb-5 transition duration-300 ease-in-out`}
-        />
+        /> */}
       </div>
 
       {/* Button group */}
