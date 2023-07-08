@@ -1,8 +1,11 @@
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
-const menuList = ["Shop", "About", "Help", "Terms", "Privacy"];
+const menuList = ["About", "FAQ", "Terms", "Privacy"];
 
 const Menu = ({ menuToggle }) => {
+  const pathname = usePathname();
+
   return (
     <div
       id="menu"
@@ -32,12 +35,22 @@ const Menu = ({ menuToggle }) => {
         </svg>
       </button>
       <nav className="mt-[2.2em]">
+        <a
+          href="/"
+          className={`${
+            pathname === "/" ? "bg-white text-black" : ""
+          } relative mx-[-1em] block cursor-pointer border-b border-[hsla(0,0%,100%,.6)] px-[1em] transition duration-300 ease-in-out first:border-t hover:bg-white hover:text-black`}
+        >
+          <span className="block py-[1em]">Shop</span>
+        </a>
         {menuList.map((item, index) => (
           <a
-            data-id={index}
             href={`/${item.toLowerCase()}/`}
             key={index}
-            className="relative mx-[-1em] block cursor-pointer border-b border-[hsla(0,0%,100%,.6)] px-[1em] transition duration-300 ease-in-out first:border-t hover:bg-white hover:text-black"
+            className={`${
+              pathname.startsWith(`${"/" + item.toLowerCase()}`) &&
+              "bg-white text-black"
+            } relative mx-[-1em] block cursor-pointer border-b border-[hsla(0,0%,100%,.6)] px-[1em] transition duration-300 ease-in-out first:border-t hover:bg-white hover:text-black`}
           >
             <span className="block py-[1em]">{item}</span>
           </a>

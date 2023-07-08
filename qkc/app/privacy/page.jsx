@@ -1,5 +1,10 @@
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "Privacy policy | QKC Studios®",
+  description: "minimal, modern, and affordable clothing brand for introverts",
+};
+
 export default function Privacy() {
   return (
     <main
@@ -7,11 +12,12 @@ export default function Privacy() {
       className="min-w-full flex-col overflow-x-hidden px-[19px] pb-[19px] pt-[64px] transition duration-300 ease-in-out md:px-[26px] md:pt-[80px]"
     >
       <div>
-        <p>
-          Last updated: <span>24th June 2023</span>
+        <h1>PRIVACY POLICY</h1>
+        <p className="font-bold">
+          Last updated: <span>8th July 2023</span>
         </p>
         <p>
-          This Privacy Policy describes how Quiet Kids Club (the "
+          This Privacy Policy describes how QKC Studios (the "
           <strong>Site</strong>", "<strong>we</strong>", "<strong>us</strong>",
           or "<strong>our</strong>") collects, uses, and discloses your personal
           information when you visit, use our services, or make a purchase from
@@ -450,7 +456,7 @@ export default function Privacy() {
         <p>
           Should you have any questions about our privacy practices or this
           Privacy Policy, or if you would like to exercise any of the rights
-          available to you,&nbsp;or email us at arthur.j.laroya@gmail.com
+          available to you,&nbsp;or email us at qkcstudios@gmail.com
         </p>
       </div>
 

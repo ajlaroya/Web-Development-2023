@@ -1,5 +1,10 @@
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "About | QKC Studios®",
+  description: "minimal, modern, and affordable clothing brand for introverts",
+};
+
 export default function About() {
   return (
     <main
@@ -7,8 +12,8 @@ export default function About() {
       className="min-w-full flex-col overflow-x-hidden px-[19px] pb-[19px] pt-[64px] transition duration-300 ease-in-out md:px-[26px] md:pt-[80px]"
     >
       <section className="border-t py-6">
-        <div className="flex flex-wrap text-xl">
-          <h1 className="w-full pb-2 md:pb-0 md:w-1/3 pr-[2em] font-semibold">About</h1>
+        <div className="flex flex-wrap">
+          <h1 className="w-full pb-2 md:pb-0 md:w-1/3 pr-[2em] font-semibold">ABOUT</h1>
           <div className="w-full md:w-2/3 space-y-4">
             <p>
               Now that we know who you are, I know who I am. I'm not a mistake!

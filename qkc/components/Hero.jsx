@@ -10,8 +10,8 @@ const HeroCard = () => {
         src="/hero.mp4"
       />
       <div className="absolute left-0 top-0 flex flex-col h-full w-full items-center justify-center font-bold tracking-tight text-white mix-blend-overlay bg-black/30">
-        <p className="text-2xl md:text-5xl">Quiet Kids Club®</p>
-        <p className="text-lg md:text-2xl">coming late July 2023</p>
+        <p className="text-2xl md:text-5xl">QKC Studios®</p>
+        <p className="text-lg md:text-2xl">coming late July '23</p>
       </div>
       {/* <button className="absolute bottom-0 right-0 items-start overflow-x-visible overflow-y-visible p-[26px]">
         <svg

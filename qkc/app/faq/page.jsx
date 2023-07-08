@@ -1,22 +1,27 @@
-'use client'
+
 
 import AccordionItem from "@/components/AccordionItem";
 import Footer from "@/components/Footer";
 import { FAQ } from "@/constants/faq";
 
-export default function Help() {
+export const metadata = {
+  title: "FAQ | QKC Studios®",
+  description: "minimal, modern, and affordable clothing brand for introverts",
+};
+
+export default function FAQ() {
   return (
     <main
       id="page"
       className="min-w-full flex-col overflow-x-hidden px-[19px] pb-[19px] pt-[64px] transition duration-300 ease-in-out md:px-[26px] md:pt-[80px]"
     >
       <section className="border-b border-t py-6">
-        <div className="flex flex-wrap text-xl font-semibold">
-          <h1 className="w-full md:w-1/3 pb-2">Help</h1>
+        <div className="flex flex-wrap">
+          <h1 className="w-full md:w-1/3 pb-2">FAQ</h1>
           <div className="w-full md:w-2/3 space-y-5">
             <p>
               If you have any specific requests or if you encounter any issues
-              with your mockup files, please drop us an email at <a href="mailto:mail@qkc.studios">mail@qkc.studios</a>. We're happy
+              with your mockup files, please drop us an email at <a href="qkcstudios@gmail.com">qkcstudios@gmail.com</a>. We're happy
             to help.
             </p>
             

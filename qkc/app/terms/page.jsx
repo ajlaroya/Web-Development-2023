@@ -1,5 +1,10 @@
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "Terms & Conditions | QKC Studios®",
+  description: "minimal, modern, and affordable clothing brand for introverts",
+};
+
 export default function Terms() {
   return (
     <main
@@ -7,9 +12,9 @@ export default function Terms() {
       className="min-w-full flex-col overflow-x-hidden px-[19px] pb-[19px] pt-[64px] transition duration-300 ease-in-out md:px-[26px] md:pt-[80px]"
     >
       <div>
-        <strong>OVERVIEW</strong> <br /> This website is operated by Quiet Kids
+        <h1>TERMS & CONDITIONS</h1> <br /> This website is operated by Quiet Kids
         Club. Throughout the site, the terms “we”, “us” and “our” refer to Quiet
-        Kids Club. Quiet Kids Club offers this website, including all
+        Kids Club. QKC Studios offers this website, including all
         information, tools and Services available from this site to you, the
         user, conditioned upon your acceptance of all terms, conditions,
         policies and notices stated here. <br /> <br /> By visiting our site
@@ -230,7 +235,7 @@ export default function Terms() {
         conditions of any kind, either express or implied, including all implied
         warranties or conditions of merchantability, merchantable quality,
         fitness for a particular purpose, durability, title, and
-        non-infringement. <br /> In no case shall Quiet Kids Club, our
+        non-infringement. <br /> In no case shall QKC Studios, our
         directors, officers, employees, affiliates, agents, contractors,
         interns, suppliers, Service providers or licensors be liable for any
         injury, loss, claim, or any direct, indirect, incidental, punitive,
@@ -249,7 +254,7 @@ export default function Terms() {
         or incidental damages, in such states or jurisdictions, our liability
         shall be limited to the maximum extent permitted by law. <br /> <br />{" "}
         <strong>SECTION 14 - INDEMNIFICATION</strong> <br /> You agree to
-        indemnify, defend and hold harmless Quiet Kids Club and our parent,
+        indemnify, defend and hold harmless QKC Studios and our parent,
         subsidiaries, affiliates, partners, officers, directors, agents,
         contractors, licensors, Service providers, subcontractors, suppliers,
         interns and employees, harmless from any claim or demand, including
@@ -300,10 +305,7 @@ export default function Terms() {
         Terms of Service constitutes acceptance of those changes. <br /> <br />{" "}
         <strong>SECTION 20 - CONTACT INFORMATION</strong> <br /> Questions about
         the Terms of Service should be sent to us at arthur.j.laroya@gmail.com.{" "}
-        <br /> Our contact information is posted below: <br /> [INSERT TRADING
-        NAME] <br /> arthur.j.laroya@gmail.com <br /> [INSERT BUSINESS ADDRESS]{" "}
-        <br /> [INSERT BUSINESS PHONE NUMBER] <br /> [INSERT BUSINESS
-        REGISTRATION NUMBER] <br /> [INSERT VAT NUMBER]
+        <br /> Our contact information is posted below: <br /> QKC Studios® <br /> qkcstudios@gmail.com <br /> 84 730 299 782 <br />
       </div>
 
       <Footer />
