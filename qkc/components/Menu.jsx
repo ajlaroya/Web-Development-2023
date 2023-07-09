@@ -59,7 +59,7 @@ const Menu = ({ menuToggle }) => {
       {/* sublist */}
       <div className="mt-auto pt-5">
         <div className="flex gap-2">
-          <a href="https://twitter.com/">
+          <a href="https://twitter.com/qkcstudios">
             <Image
               src="/twitter.svg"
               alt="visa"
@@ -68,7 +68,7 @@ const Menu = ({ menuToggle }) => {
               className="h-8 w-8"
             />
           </a>
-          <a href="https://instagram.com/">
+          <a href="https://instagram.com/qkcstudios">
             <Image
               src="/instagram.svg"
               alt="instagram"
@@ -78,7 +78,7 @@ const Menu = ({ menuToggle }) => {
             />
           </a>
 
-          <a href="https://facebook.com/">
+          <a href="https://www.facebook.com/qkcstudios">
             <Image
               src="/facebook.svg"
               alt="facebook"

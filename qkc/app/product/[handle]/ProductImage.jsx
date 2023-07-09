@@ -21,7 +21,7 @@ const ProductImage = ({ activeProduct }) => {
               alt={activeProduct?.image.altText || activeProduct.title}
               width="1500"
               height="1000"
-              className="scale-75 absolute left-0 top-0 h-full w-full max-w-full overflow-clip rounded-xl object-cover align-middle transition hover:scale-150 ease-in-out duration-150"
+              className="scale-75 absolute left-0 top-0 h-full w-full max-w-full overflow-clip rounded-xl object-cover align-middle transition hover:scale-150 ease-in-out duration-150 drop-shadow-[0_15px_15px_rgba(255,255,255,0.1)]"
               src={activeProduct?.image.src}
               priority
               placeholder={imageLoader}

@@ -46,7 +46,7 @@ const ProductCard = ({ product, index }) => {
           alt={product.imageAlt ?? "qkc apparel"}
           width="1000"
           height="1000"
-          className="absolute left-0 top-2 aspect-auto h-full w-full max-w-full overflow-clip object-cover p-24"
+          className="absolute left-0 top-2 aspect-auto h-full w-full max-w-full overflow-clip object-cover p-10 sm:p-24 drop-shadow-[0_15px_15px_rgba(255,255,255,0.1)]"
         />
       </motion.div>
     </>

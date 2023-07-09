@@ -14,23 +14,23 @@ const ProductSlider = ({ products }) => {
           onClick={() => router.push(`/product/${product.handle}`)}
         >
           <div className="relative flex aspect-square w-full flex-col overflow-hidden rounded-xl bg-[#1d1d1d]">
-            {/* <div className="relative z-10 grow p-4">
-              <h2 className="mt-[-3px]">
+            <div className="relative z-10 grow p-4 hidden sm:flex">
+              <div className="mt-[-3px]">
                 <a
                   href={`/product/${product.handle}`}
                   className="flex justify-between gap-4 bg-transparent"
                 >
-                  <span>00{index}</span>
+                  <span>0{index}</span>
                   <span></span>
                 </a>
-              </h2>
-            </div> */}
+              </div>
+            </div>
             <Image
               alt={product.imageAlt ?? "qkc apparel"}
               width="1500"
               height="1000"
               src={product.images[0].src}
-              className="absolute left-0 top-0 aspect-auto h-full w-full max-w-full rounded-lg object-cover p-10"
+              className="absolute left-0 top-0 aspect-auto h-full w-full max-w-full rounded-lg object-cover p-5 sm:p-10 drop-shadow-[0_15px_15px_rgba(255,255,255,0.1)]"
             />
           </div>
         </div>

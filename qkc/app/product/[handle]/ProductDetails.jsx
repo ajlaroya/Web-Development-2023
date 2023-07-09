@@ -11,7 +11,7 @@ function convert(color) {
     slate: "#B8BEC3",
     chalk: "#FFFFFF",
     indigo: "#202A44",
-    spruce: '#0a5f38'
+    spruce: "#0a5f38",
   };
 
   if (typeof colours[color.toLowerCase()] != "undefined")
@@ -29,23 +29,16 @@ const ProductDetails = ({
   const { descriptionHtml, title, variants, options } = product;
   const [activeColour, setActiveColour] = useState(selectedProduct.colour);
   const [activeSize, setActiveSize] = useState(selectedProduct.size);
-  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="flex flex-col md:w-1/2">
       {/* Product info */}
-      <div className="flex flex-wrap justify-between pb-2 font-semibold text-2xl">
-        <h1>
-          {title}
-        </h1>
+      <div className="flex flex-wrap justify-between pb-2 text-2xl font-semibold">
+        <h1>{title}</h1>
         <p>${Intl.NumberFormat("en-AU").format(variants[0].price.amount)}</p>
       </div>
       {/* Product SKU */}
       <div className="mt-auto">
-        {/* Flipper */}
-        {/* <div className="relative flex overflow-hidden py-3 text-lg md:text-xl">
-        The QKC Cozy '22 Hoodie is constructed from a 8 oz cotton-polyester blend and brushed for extra softness and warmth, without losing breathability. The garment also features the Quiet Kids Club logo across the front and a kangaroo pocket. Appears in a loose, boxy silhouette.
-        </div> */}
         <div
           dangerouslySetInnerHTML={{ __html: descriptionHtml }}
           className="border-b pb-5 transition duration-300 ease-in-out"
@@ -55,19 +48,14 @@ const ProductDetails = ({
       {/* Accordion */}
       <div className="border-t">
         {/* Colors */}
-        <button
-          type="button"
-          data-id=""
-          aria-expanded="false"
-          className="flex w-full cursor-pointer justify-between bg-transparent py-4 text-left transition"
-        >
-          <span aria-hidden="true">Colour</span>
-          <span>{activeColour}​</span>
-        </button>
         <div
-          aria-hidden="false"
-          className="relative max-h-[80px] overflow-hidden border-b transition"
+          type="button"
+          className="flex w-full justify-between bg-transparent py-4 text-left transition"
         >
+          <span>Colour</span>
+          <span>{activeColour}​</span>
+        </div>
+        <div className="relative max-h-[80px] overflow-hidden border-b transition">
           <div className="mb-5">
             <div className="mb-0 flex w-full gap-5">
               {options[0].values.map((colour, index) => (
@@ -94,19 +82,11 @@ const ProductDetails = ({
         </div>
 
         {/* Sizes */}
-        <button
-          type="button"
-          data-id=""
-          aria-expanded="false"
-          className="flex w-full cursor-pointer justify-between bg-transparent py-4 text-left transition"
-        >
-          <span aria-hidden="true">Size</span>
+        <div className="flex w-full justify-between bg-transparent py-4 text-left transition">
+          <span>Size</span>
           <span>{activeSize}</span>
-        </button>
-        <div
-          aria-hidden="true"
-          className="relative max-h-[80px] overflow-hidden border-b transition"
-        >
+        </div>
+        <div className="relative max-h-[80px] overflow-hidden border-b transition">
           <div className="mb-5">
             <div className="mb-0 flex w-full gap-5">
               {/* not all products have sizes so render one size only */}
@@ -141,33 +121,13 @@ const ProductDetails = ({
             </div>
           </div>
         </div>
-
-        {/* Description */}
-        {/* <button
-          type="button"
-          data-id=""
-          aria-expanded="false"
-          className="flex w-full cursor-pointer justify-between bg-transparent py-5 text-left transition"
-          onClick={() => {
-            setIsExpanded(!isExpanded);
-          }}
-        >
-          <span aria-hidden="true">Description</span>
-          <span>{isExpanded ? "-" : "+"}​</span>
-        </button>
-        <div
-          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-          className={`${
-            isExpanded ? "block" : "hidden"
-          } border-b pb-5 transition duration-300 ease-in-out`}
-        /> */}
       </div>
 
       {/* Button group */}
       <div className="mt-5 flex gap-5">
         <button
           type="button"
-          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-[#1d1d1d] px-6 py-4 ring-inset transition duration-200 hover:text-white hover:ring-1 hover:ring-white md:text-sm"
+          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-[#1d1d1d] px-6 py-4 ring-inset transition duration-200 hover:text-white hover:ring-1 hover:ring-white text-sm"
           onClick={(e) => {
             e.preventDefault();
             addItemToCheckout(activeProduct.id, 1);
