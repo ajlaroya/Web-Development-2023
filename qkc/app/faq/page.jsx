@@ -9,7 +9,7 @@ export const metadata = {
   description: "minimal, modern, and affordable clothing brand for introverts",
 };
 
-export default function FAQ() {
+export default function Help() {
   return (
     <main
       id="page"
