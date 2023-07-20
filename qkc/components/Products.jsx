@@ -28,9 +28,8 @@ const Products = async () => {
           <div>
             <p className="text-center italic">
               QKC Studios is an apparel line that celebrates the unique
-              qualities of introverts. All of the designs are inspired by
-              introversion and feature bold statements. QKC Studios is committed
-              to creating a community where introverts can feel empowered and
+              qualities of introverts. We are committed
+              to creating a space where introverts can feel empowered and
               accepted.
             </p>
           </div>

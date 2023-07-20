@@ -1,4 +1,5 @@
 import { Space_Grotesk } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
 
 import "./globals.css";
 
@@ -38,6 +39,7 @@ export default async function RootLayout({ children }) {
         <ShopProvider>
           <Navbar />
           {children}
+          <Analytics />
         </ShopProvider>
       </body>
     </html>

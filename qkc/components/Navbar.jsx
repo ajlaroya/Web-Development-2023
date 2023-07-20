@@ -50,9 +50,9 @@ const Navbar = () => {
             <Bars3Icon className="swap-off h-6 w-6" />
           </label>
 
-          <span className="cursor-pointer font-bold transition duration-300 ease-in hover:text-zinc-400">
+          <span className="cursor-pointer font-bold tracking-tight transition duration-300 ease-in hover:text-zinc-400">
             <a href="/">
-              <div>QKC Studios®</div>
+              <div className="flex gap-2 items-center"><img src="/logo.svg" alt="Logo" className="w-4 h-4"/>QKC Studios®</div>
             </a>
           </span>
 
