@@ -1,30 +1,22 @@
 "use client";
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Menu from "./Menu";
 import Cart from "./Cart";
 import { ShopContext } from "@/context/shopContext";
 import { Bars3Icon, ShoppingBagIcon } from "@heroicons/react/24/solid";
-import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const { checkout, cartToggle, menuToggle, setCartToggle, setMenuToggle } =
     useContext(ShopContext);
 
-  const router = useRouter();
-
-  useEffect(() => {
-    // Prefetch the dashboard page
-    router.prefetch(`/`);
-  }, [router]);
-
   const handleCartToggle = () => {
     setCartToggle((prevState) => !prevState);
     if (cartToggle) {
-      document.getElementById("page").classList.remove("-translate-x-[445px]");
+      document.getElementById("page").classList.remove("-translate-x-[450px]");
     } else {
-      document.getElementById("page").classList.add("-translate-x-[445px]");
-      document.getElementById("page").classList.remove("translate-x-[445px]");
+      document.getElementById("page").classList.add("-translate-x-[450px]");
+      document.getElementById("page").classList.remove("translate-x-[450px]");
       setMenuToggle(false);
     }
   };
@@ -32,18 +24,17 @@ const Navbar = () => {
   const handleMenuToggle = () => {
     setMenuToggle((prevState) => !prevState);
     if (menuToggle) {
-      document.getElementById("page").classList.remove("translate-x-[445px]");
+      document.getElementById("page").classList.remove("translate-x-[450px]");
     } else {
-      document.getElementById("page").classList.add("translate-x-[445px]");
-      document.getElementById("page").classList.remove("-translate-x-[445px]");
+      document.getElementById("page").classList.add("translate-x-[450px]");
+      document.getElementById("page").classList.remove("-translate-x-[450px]");
       setCartToggle(false);
     }
   };
 
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 z-[999] bg-black">
-        <div className="flex justify-between p-[19px] font-medium md:p-[26px] md:text-[19px]">
+      <nav className="fixed flex justify-between p-[19px] md:p-[26px] left-0 right-0 top-0 z-[999] bg-black">
           <label className="swap-rotate swap cursor-pointer whitespace-nowrap transition duration-300 ease-in-out hover:text-zinc-400">
             <input type="checkbox" onClick={handleMenuToggle} />
             <Bars3Icon className="swap-on h-6 w-6" />
@@ -65,7 +56,6 @@ const Navbar = () => {
               {checkout.lineItems?.length != 0 && checkout.lineItems?.length }
             </sup>
           </button>
-        </div>
       </nav>
       <Menu menuToggle={menuToggle} />
       <Cart

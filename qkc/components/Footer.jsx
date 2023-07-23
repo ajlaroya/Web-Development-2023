@@ -8,9 +8,9 @@ const Footer = () => {
         <div className="relative flex grow basis-full items-center rounded-xl bg-[#1d1d1d] sm:basis-1/3 md:basis-1/4">
           <label
             htmlFor="newsletter"
-            className="flex h-full min-h-[68px] w-full items-center justify-between px-5 py-2 text-lg"
+            className="text-md flex h-full min-h-[68px] w-full items-center justify-between px-5 py-2 font-semibold"
           >
-            Sign up for the next drop
+            Sign up for QKC news
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,45 +44,60 @@ const Footer = () => {
               name="email"
               placeholder="Email"
               required
-              className="cursor mr-[-1em] min-h-[68px] w-full min-w-[300px] appearance-none rounded-xl bg-[#1d1d1d] px-6 py-2 ring-inset focus:ring-white"
+              className="cursor mr-[-1em] min-h-[68px] w-full min-w-[300px] appearance-none rounded-xl bg-[#1d1d1d] px-6 py-2 ring-inset focus:ring-[#D3D3D3] placeholder-white"
             />
-            <button className="absolute right-0 top-0 flex min-h-[68px] items-center justify-center rounded-xl bg-white px-6 py-2 text-black">
+            <button className="text-md absolute right-0 top-0 flex min-h-[68px] items-center justify-center rounded-xl bg-[#D3D3D3] px-6 py-2 font-bold text-black hover:animate-pulse">
               Subscribe
             </button>
           </form>
         </div>
 
-        {/* Payment options */}
-        <div className="relative flex grow basis-full items-center rounded-xl bg-[#1d1d1d] p-6 sm:basis-1/3 md:basis-1/4">
+        {/* Social links */}
+        <div className="relative flex grow basis-full items-center rounded-xl bg-[#1d1d1d] p-4 sm:basis-1/3 md:basis-1/4">
           <div className="flex w-full items-center justify-center gap-5">
-            <Image
-              src="https://099.supply/images/payment-providers/visa.svg"
-              alt="visa"
-              width={65}
-              height={22}
-              className="h-auto max-h-[1rem] w-auto max-w-[5rem] overflow-clip"
-            />
-            <Image
-              src="https://099.supply/images/payment-providers/mastercard.svg"
-              alt="mastercard"
-              width={40}
-              height={26}
-              className="h-auto max-h-[1rem] w-auto max-w-[5rem] overflow-clip"
-            />
-            <Image
-              src="/afterpay.svg"
-              alt="afterpay"
-              width={50}
-              height={26}
-              className="h-auto max-h-[4rem] w-auto max-w-[5rem] overflow-clip"
-            />
-            <Image
-              src="https://099.supply/images/payment-providers/paypal.svg"
-              alt="paypal"
-              width={81}
-              height={22}
-              className="h-auto max-h-[1rem] w-auto max-w-[5rem] overflow-clip"
-            />
+            <a
+              href="https://www.facebook.com/qkcstudios"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/facebook.svg"
+                alt="facebook"
+                width={50}
+                height={50}
+                className="h-auto max-h-[2rem] w-auto max-w-[2rem] hover:animate-pulse"
+              />
+            </a>
+
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/instagram.svg"
+                alt="instagram"
+                width={50}
+                height={50}
+                className="h-auto max-h-[2rem] w-auto max-w-[2rem] hover:animate-pulse"
+              />
+            </a>
+
+            <a href="https://twitter.com/qkcstudios" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/twitter.svg"
+                alt="twitter"
+                width={50}
+                height={50}
+                className="h-auto max-h-[2rem] w-auto max-w-[2rem] hover:animate-pulse"
+              />
+            </a>
+
+            <a href="https://open.spotify.com/playlist/6EdWkciJ9At70lkbT3ugEo?si=ddd28a4134224812" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/spotify.svg"
+                alt="spotify"
+                width={50}
+                height={50}
+                className="h-auto max-h-[2rem] w-auto max-w-[2rem] hover:animate-pulse"
+              />
+            </a>
           </div>
         </div>
       </div>

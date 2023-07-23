@@ -10,8 +10,10 @@ const Menu = ({ menuToggle }) => {
     <div
       id="menu"
       className={`${
-        menuToggle ? "opacity-100" : "-translate-x-[450px]"
-      } fixed bottom-[20px] left-[20px] top-[65px] z-[999] flex h-auto w-[290px] min-w-[290px] max-w-full flex-col overflow-y-auto rounded-xl bg-[#1d1d1d] p-[1em] transition duration-300 ease-in-out sm:bottom-[26px] sm:left-[26px] sm:w-[420px] sm:min-w-[420px] md:top-[80px]`}
+        menuToggle
+          ? "opacity-100"
+          : "-translate-x-[360px] sm:-translate-x-[450px]"
+      } fixed bottom-[20px] left-[20px] top-[65px] z-[999] flex h-auto w-[340px] flex-col rounded-xl bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out sm:bottom-[26px] sm:left-[26px] sm:w-[420px] sm:top-[80px]`}
       aria-hidden="true"
     >
       <button

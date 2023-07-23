@@ -20,13 +20,13 @@ const Products = async () => {
         <div className="relative z-10 flex flex-grow flex-col p-[19px] justify-center">
           {/* Card title */}
           <h2 className="mb-[17px] mt-[-3px]">
-            <span className="flex justify-center font-bold">
+            <span className="flex justify-center font-bold sm:text-2xl md:text-lg tracking-tight">
               <span>QKC Studios®</span>
             </span>
           </h2>
           {/* Card desc */}
-          <div>
-            <p className="text-center italic">
+          <div className="mx-5 sm:mx-10 sm:text-xl md:text-lg">
+            <p className="text-justify">
               QKC Studios is an apparel line that celebrates the unique
               qualities of introverts. We are committed
               to creating a space where introverts can feel empowered and

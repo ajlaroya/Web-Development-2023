@@ -10,13 +10,13 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
       className={`${
         cartToggle
           ? "opacity-100"
-          : "translate-x-[320px] sm:translate-x-[450px]"
-      } fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[290px] min-w-[290px] max-w-full flex-col overflow-y-auto rounded-xl bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out sm:w-[420px] sm:min-w-[420px] md:bottom-[26px] md:right-[26px] md:top-[80px]`}
+          : "translate-x-[360px] sm:translate-x-[450px]"
+      } fixed bottom-[20px] right-[20px] top-[65px] z-[999] flex h-auto w-[340px] flex-col rounded-xl bg-[#1d1d1d] p-[17px] transition duration-300 ease-in-out sm:w-[420px] md:bottom-[26px] md:right-[26px] md:top-[80px]`}
       aria-hidden="true"
     >
       <div className="mb-4 flex w-full items-center justify-between border-b border-[hsla(0,0%,100%,.6)] pb-4">
-        <h2 className="mt-0 text-lg">Cart</h2>
-        <p>{checkout?.lineItems?.length} items</p>
+        <h2>Cart</h2>
+        <h3>{checkout?.lineItems?.length} items</h3>
         <button
           className="cursor z-10 inline-block"
           aria-label="Close"
@@ -93,7 +93,7 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
                   </svg>
                   <span className="sr-only">Remove</span>
                 </button>
-                <span>
+                <span className="text-sm font-semibold sm:text-base">
                   <a
                     href=""
                     className="ml-[-20px] inline-block group-hover:ml-[0px]"
@@ -101,31 +101,27 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
                     {item.title}
                   </a>
                 </span>
-                <span className="ml-auto whitespace-nowrap">
+                <span className="ml-auto whitespace-nowrap text-sm font-semibold sm:text-base">
                   $
                   {Intl.NumberFormat("en-AU").format(
                     item.variant.priceV2.amount * item.quantity
                   )}
                 </span>
-                <a
-                  href=""
-                  className="absolute left-0 top-0 z-10 h-full w-full"
-                ></a>
               </span>
               {/* Badges */}
               <div className="transition duration-500 group-hover:opacity-0">
                 <ul className="flex">
                   <li className="flex min-w-0 basis-1/2 pl-[0.3em]">
-                    <span className="inline-block flex-1 shrink grow whitespace-nowrap rounded-[0.5em] border border-[#383838] bg-[#383838] px-[6px] py-[2px] text-center align-middle text-xs font-medium leading-[1] text-[hsla(0,0%,100%,.6)]">
+                    <span className="inline-block flex-1 shrink grow whitespace-nowrap rounded-[0.5em] border border-[#383838] bg-[#383838] px-[6px] py-[3px] text-center align-middle text-xs font-medium leading-[1] text-[hsla(0,0%,100%,.6)] sm:text-sm">
                       <span className="relative top-[-0.05em]">
                         {item.variant.title}
                       </span>
                     </span>
                   </li>
                   <li className="flex min-w-0 basis-1/2 pl-[0.3em]">
-                    <span className="inline-block flex-1 overflow-hidden text-ellipsis whitespace-nowrap rounded-[0.5em] border border-[#383838] bg-[#1d1d1d] px-[6px] py-[2px] text-center align-middle text-xs font-medium leading-[1] text-[hsla(0,0%,100%,.6)]">
+                    <span className="inline-block flex-1 overflow-hidden text-ellipsis whitespace-nowrap rounded-[0.5em] border border-[#383838] bg-[#1d1d1d] px-[6px] py-[3px] text-center align-middle text-xs font-medium leading-[1] text-[hsla(0,0%,100%,.6)] sm:text-sm">
                       <span className="relative top-[-0.05em]">
-                        x00{item.quantity}
+                        x{item.quantity}
                       </span>
                     </span>
                   </li>
@@ -139,14 +135,14 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
       {/* Cart subtotal */}
       {checkout?.lineItems?.length > 0 ? (
         <div className="mt-auto pt-[1em]">
-          <div className="mb-[1em] flex items-start justify-between gap-[0.5em]">
-            <span>Subtotal</span>
-            <span>
+          <div className="mb-[1em] flex items-start justify-between gap-[0.5em] font-bold">
+            <h3>Subtotal</h3>
+            <h3>
               $
               {Intl.NumberFormat("en-AU").format(
                 checkout?.subtotalPrice?.amount
               )}
-            </span>
+            </h3>
           </div>
           <a href={checkout?.webUrl} target="_blank" rel="noreferrer">
             <button
