@@ -26,7 +26,6 @@ const Menu = ({ menuToggle }) => {
           height="31.4"
           viewBox="0 0 31.4 31.4"
           className="inline-block h-4 w-4 overflow-hidden"
-          aria-hidden="true"
         >
           <path
             stroke="currentColor"

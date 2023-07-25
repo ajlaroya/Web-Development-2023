@@ -6,8 +6,7 @@ const Footer = () => {
       <div className="flex flex-wrap gap-5">
         {/* Newsletter */}
         <div className="relative flex grow basis-full items-center rounded-xl bg-[#1d1d1d] sm:basis-1/3 md:basis-1/4">
-          <label
-            htmlFor="newsletter"
+          <div
             className="text-md flex h-full min-h-[68px] w-full items-center justify-between px-5 py-2 font-semibold"
           >
             Sign up for QKC news
@@ -27,7 +26,7 @@ const Footer = () => {
                 ></path>
               </svg>
             </div>
-          </label>
+          </div>
         </div>
 
         {/* Email form */}
@@ -44,6 +43,7 @@ const Footer = () => {
               name="email"
               placeholder="Email"
               required
+              autoComplete="on"
               className="cursor mr-[-1em] min-h-[68px] w-full min-w-[300px] appearance-none rounded-xl bg-[#1d1d1d] px-6 py-2 ring-inset focus:ring-[#D3D3D3] placeholder-white"
             />
             <button className="text-md absolute right-0 top-0 flex min-h-[68px] items-center justify-center rounded-xl bg-[#D3D3D3] px-6 py-2 font-bold text-black hover:animate-pulse">
@@ -69,7 +69,7 @@ const Footer = () => {
               />
             </a>
 
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/qkcstudios/" target="_blank" rel="noopener noreferrer">
               <Image
                 src="/instagram.svg"
                 alt="instagram"

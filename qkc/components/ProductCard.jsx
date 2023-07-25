@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, stagger } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -20,7 +20,7 @@ const ProductCard = ({ product, index }) => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: index * 0.15 }}
+        transition={{ duration: 0.5, delay: index * 0.15 }}
         className="relative flex aspect-square w-auto cursor-pointer flex-col overflow-hidden rounded-xl bg-[#1d1d1d] text-[17px] transition duration-300 ease-in-out first:cursor-none hover:-translate-y-2"
         onClick={() => router.push(`/product/${product.handle}`)}
       >
@@ -42,8 +42,9 @@ const ProductCard = ({ product, index }) => {
         <Image
           src={product.images[0].src}
           alt={product.imageAlt ?? "qkc apparel"}
-          width="1000"
-          height="1000"
+          width="500"
+          height="500"
+          priority
           className="absolute left-0 top-2 aspect-auto h-full w-full max-w-full overflow-clip object-cover p-10 sm:p-24 drop-shadow-[0_15px_15px_rgba(255,255,255,0.1)]"
         />
       </motion.div>

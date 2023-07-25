@@ -35,8 +35,8 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed flex justify-between p-[19px] md:p-[26px] left-0 right-0 top-0 z-[999] bg-black">
-          <label className="swap-rotate swap cursor-pointer whitespace-nowrap transition duration-300 ease-in-out hover:text-zinc-400">
-            <input type="checkbox" onClick={handleMenuToggle} />
+          <label className="swap-rotate swap cursor-pointer whitespace-nowrap transition duration-300 ease-in-out hover:text-zinc-400" htmlFor="menuToggle">
+            <input id="menuToggle" type="checkbox" onClick={handleMenuToggle} />
             <Bars3Icon className="swap-on h-6 w-6" />
             <Bars3Icon className="swap-off h-6 w-6" />
           </label>
@@ -48,6 +48,7 @@ const Navbar = () => {
           </span>
 
           <button
+            id="cart" aria-label="shoppingbag"
             className="flex cursor-pointer whitespace-nowrap transition duration-300 ease-in-out hover:text-zinc-400"
             onClick={handleCartToggle}
           >

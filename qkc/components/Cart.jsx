@@ -19,6 +19,7 @@ const Cart = ({ checkout, cartToggle, handleCartToggle }) => {
         <h3>{checkout?.lineItems?.length} items</h3>
         <button
           className="cursor z-10 inline-block"
+          id="shoppingBag"
           aria-label="Close"
           onClick={handleCartToggle}
         >
