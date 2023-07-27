@@ -46,7 +46,7 @@ const Footer = () => {
               autoComplete="on"
               className="cursor mr-[-1em] min-h-[68px] w-full min-w-[300px] appearance-none rounded-xl bg-[#1d1d1d] px-6 py-2 ring-inset focus:ring-[#D3D3D3] placeholder-white"
             />
-            <button className="text-md absolute right-0 top-0 flex min-h-[68px] items-center justify-center rounded-xl bg-[#D3D3D3] px-6 py-2 font-bold text-black hover:animate-pulse">
+            <button className="text-sm sm:text-base absolute right-0 top-0 flex min-h-[68px] items-center justify-center rounded-xl bg-[#D3D3D3] px-6 py-2 font-semibold text-black hover:animate-pulse">
               Subscribe
             </button>
           </form>

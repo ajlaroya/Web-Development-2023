@@ -19,12 +19,26 @@ export const metadata = {
     "brand",
     "introverts",
     "fashion",
-    "clothing",
+    "streetwear",
   ],
   colorScheme: "dark",
   creator: "Arthur Laroya",
   icons: {
     icon: "/logo.svg",
+  },
+  metadataBase: `https://${process.env.VERCEL_URL}`,
+  openGraph: {
+    title: 'QKC Studios®',
+    description: 'Minimal, modern, cozy apparel for the introverted',
+    url: 'https://qkc-studios.vercel.app/',
+    siteName: 'QKC Studios®',
+    images: [
+      {
+        url: '/logo_black.svg'
+      },
+    ],
+    locale: 'en_AU',
+    type: 'website',
   },
 };
 

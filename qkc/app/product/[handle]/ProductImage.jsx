@@ -1,7 +1,6 @@
 'use client' 
 
 import Image from "next/image";
-import Loader from "@/components/Loader";
 
 const imageLoader = () => {
   return `http://samherbert.net/svg-loaders/svg-loaders/bars.svg`

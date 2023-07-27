@@ -10,7 +10,7 @@ const ProductCard = ({ product, index }) => {
   const router = useRouter();
 
   useEffect(() => {
-    // Prefetch the dashboard page
+    // Prefetch products
     router.prefetch(`/product/${product.handle}`);
   }, [router]);
 

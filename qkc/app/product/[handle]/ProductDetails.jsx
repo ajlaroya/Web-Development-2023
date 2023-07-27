@@ -33,30 +33,30 @@ const ProductDetails = ({
   return (
     <div className="flex flex-col md:w-1/2">
       {/* Product info */}
-      <div className="flex flex-wrap justify-between pb-2 text-2xl font-semibold">
-        <h1>{title}</h1>
+      <div className="flex flex-wrap justify-between text-xl font-semibold tracking-tight">
+        <span className="italic">{title}</span>
         <p>${Intl.NumberFormat("en-AU").format(variants[0].price.amount)}</p>
       </div>
       {/* Product SKU */}
       <div className="mt-auto">
         <div
           dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-          className="border-b pb-5 transition duration-300 ease-in-out"
+          className="transition duration-300 ease-in-out"
         />
       </div>
 
       {/* Accordion */}
-      <div className="border-t">
+      <div className="">
         {/* Colors */}
         <div
           type="button"
-          className="flex w-full justify-between bg-transparent py-4 text-left transition"
+          className="flex w-full justify-between bg-transparent py-4 text-left font-bold transition"
         >
           <span>Colour</span>
           <span>{activeColour}​</span>
         </div>
-        <div className="relative max-h-[80px] overflow-hidden border-b transition">
-          <div className="mb-5">
+        <div className="relative max-h-[80px] overflow-hidden transition">
+          <div className="mb-3">
             <div className="mb-0 flex w-full gap-5">
               {options[0].values.map((colour, index) => (
                 <div key={index}>
@@ -82,11 +82,11 @@ const ProductDetails = ({
         </div>
 
         {/* Sizes */}
-        <div className="flex w-full justify-between bg-transparent py-4 text-left transition">
+        <div className="flex w-full justify-between bg-transparent py-4 text-left font-semibold transition">
           <span>Size</span>
           <span>{activeSize}</span>
         </div>
-        <div className="relative max-h-[80px] overflow-hidden border-b transition">
+        <div className="relative max-h-[80px] overflow-hidden transition">
           <div className="mb-5">
             <div className="mb-0 flex w-full gap-5">
               {/* not all products have sizes so render one size only */}
@@ -127,7 +127,7 @@ const ProductDetails = ({
       <div className="mt-5 flex gap-5">
         <button
           type="button"
-          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-[#1d1d1d] px-6 py-4 ring-inset transition duration-200 hover:text-white hover:ring-1 hover:ring-white text-sm"
+          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-[#D3D3D3] px-6 py-4 text-sm sm:text-md text-black ring-inset transition duration-200 hover:text-white hover:ring-1 hover:ring-white font-semibold"
           onClick={(e) => {
             e.preventDefault();
             addItemToCheckout(activeProduct.id, 1);
