@@ -7,8 +7,7 @@ const HeroCard = () => {
         loop
         autoPlay
         playsInline
-        preload="true"
-        src="/hero2.webm"
+        src="/hero.webm"
       />
       <div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center bg-black/30 font-bold tracking-tight text-white mix-blend-overlay">
         <p className="text-2xl md:text-5xl">QKC Studios®</p>
