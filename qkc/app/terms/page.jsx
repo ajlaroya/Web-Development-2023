@@ -12,9 +12,9 @@ export default function Terms() {
       className="min-w-full flex-col overflow-x-hidden px-[19px] pb-[19px] pt-[64px] transition duration-300 ease-in-out md:px-[26px] md:pt-[80px]"
     >
       <div>
-        <h1>TERMS & CONDITIONS</h1> <br /> This website is operated by Quiet Kids
-        Club. Throughout the site, the terms “we”, “us” and “our” refer to Quiet
-        Kids Club. QKC Studios offers this website, including all
+        <h1>TERMS & CONDITIONS</h1> <br /> This website is operated by Quiet
+        Kids Club. Throughout the site, the terms “we”, “us” and “our” refer to
+        Quiet Kids Club. QKC Studios offers this website, including all
         information, tools and Services available from this site to you, the
         user, conditioned upon your acceptance of all terms, conditions,
         policies and notices stated here. <br /> <br /> By visiting our site
@@ -235,24 +235,24 @@ export default function Terms() {
         conditions of any kind, either express or implied, including all implied
         warranties or conditions of merchantability, merchantable quality,
         fitness for a particular purpose, durability, title, and
-        non-infringement. <br /> In no case shall QKC Studios, our
-        directors, officers, employees, affiliates, agents, contractors,
-        interns, suppliers, Service providers or licensors be liable for any
-        injury, loss, claim, or any direct, indirect, incidental, punitive,
-        special, or consequential damages of any kind, including, without
-        limitation lost profits, lost revenue, lost savings, loss of data,
-        replacement costs, or any similar damages, whether based in contract,
-        tort (including negligence), strict liability or otherwise, arising from
-        your use of any of the Service or any products procured using the
-        Service, or for any other claim related in any way to your use of the
-        Service or any product, including, but not limited to, any errors or
-        omissions in any content, or any loss or damage of any kind incurred as
-        a result of the use of the Service or any content (or product) posted,
-        transmitted, or otherwise made available via the Service, even if
-        advised of their possibility. Because some states or jurisdictions do
-        not allow the exclusion or the limitation of liability for consequential
-        or incidental damages, in such states or jurisdictions, our liability
-        shall be limited to the maximum extent permitted by law. <br /> <br />{" "}
+        non-infringement. <br /> In no case shall QKC Studios, our directors,
+        officers, employees, affiliates, agents, contractors, interns,
+        suppliers, Service providers or licensors be liable for any injury,
+        loss, claim, or any direct, indirect, incidental, punitive, special, or
+        consequential damages of any kind, including, without limitation lost
+        profits, lost revenue, lost savings, loss of data, replacement costs, or
+        any similar damages, whether based in contract, tort (including
+        negligence), strict liability or otherwise, arising from your use of any
+        of the Service or any products procured using the Service, or for any
+        other claim related in any way to your use of the Service or any
+        product, including, but not limited to, any errors or omissions in any
+        content, or any loss or damage of any kind incurred as a result of the
+        use of the Service or any content (or product) posted, transmitted, or
+        otherwise made available via the Service, even if advised of their
+        possibility. Because some states or jurisdictions do not allow the
+        exclusion or the limitation of liability for consequential or incidental
+        damages, in such states or jurisdictions, our liability shall be limited
+        to the maximum extent permitted by law. <br /> <br />{" "}
         <strong>SECTION 14 - INDEMNIFICATION</strong> <br /> You agree to
         indemnify, defend and hold harmless QKC Studios and our parent,
         subsidiaries, affiliates, partners, officers, directors, agents,
@@ -303,9 +303,9 @@ export default function Terms() {
         our website periodically for changes. Your continued use of or access to
         our website or the Service following the posting of any changes to these
         Terms of Service constitutes acceptance of those changes. <br /> <br />{" "}
-        <strong>SECTION 20 - CONTACT INFORMATION</strong> <br /> Questions about
-        the Terms of Service should be sent to us at arthur.j.laroya@gmail.com.{" "}
-        <br /> Our contact information is posted below: <br /> QKC Studios® <br /> qkcstudios@gmail.com <br /> 84 730 299 782 <br />
+        <strong>SECTION 20 - CONTACT INFORMATION</strong>
+        <br /> Our contact information is posted below: <br /> QKC Studios®{" "}
+        <br /> qkcstudios@gmail.com <br />
       </div>
 
       <Footer />

@@ -17,7 +17,7 @@ export const FAQ = [
     {
         id: 4,
         question: "How long does it take to ship my order?",
-        answer: "Usually, it takes 3–7 days to fulfill an order, after which it’s shipped out. The shipping time depends on your location but can be estimated between 2-14 business days"
+        answer: "Usually, it takes 2–5 business days to fulfill an order, after which it’s shipped out. The shipping time depends on your location but can be estimated between 2-14 business days"
     },
     {
         id: 5,
@@ -42,8 +42,8 @@ export const FAQ = [
     ,
     {
         id: 9,
-        question: "Where will my order ship from?",
-        answer: "We work with an on-demand order fulfillment company with facilities worldwide!"
+        question: "How much is shipping?",
+        answer: "Currently, the shipping rate of our apparel is free!"
     }
     ,
     {
@@ -61,6 +61,6 @@ export const FAQ = [
     {
         id: 12,
         question: "What’s your return policy?",
-        answer: "We don’t offer returns and exchanges, but if there’s something wrong with your order, please let us know by contacting us at qkcstudios@gmail.com"
+        answer: "We currently don’t offer returns and exchanges, but if there’s something wrong with your order, please let us know by contacting us at qkcstudios@gmail.com"
     }
 ]

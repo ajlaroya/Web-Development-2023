@@ -3,6 +3,7 @@
 import AccordionItem from "@/components/AccordionItem";
 import Footer from "@/components/Footer";
 import { FAQ } from "@/constants/faq";
+import Image from "next/image";
 
 export const metadata = {
   title: "FAQ | QKC Studios®",
@@ -26,14 +27,59 @@ export default function Help() {
             </p>
             
             <p>You can also find us on social media:</p>
-            <div className="space-x-3">
-              <a href="https://www.instagram.com/qkc.studios/">Instagram</a>
-              <a href="https://www.linkedin.com/company/qkc-studios/">
-                LinkedIn
-              </a>
-              <a href="https://www.facebook.com/qkc.studios/">Facebook</a>
-              <a href="https://twitter.com/qkc_studios">Twitter</a>
-              <a href="https://github.com/qkc-studios">GitHub</a>
+            <div className="flex space-x-4">
+            <a
+              href="https://www.facebook.com/qkcstudios"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/facebook.svg"
+                alt="facebook"
+                width={50}
+                height={50}
+                className="h-auto max-h-[2rem] w-auto max-w-[2rem] hover:animate-pulse"
+              />
+            </a>
+
+            <a href="https://www.instagram.com/qkcstudios/" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/instagram.svg"
+                alt="instagram"
+                width={50}
+                height={50}
+                className="h-auto max-h-[2rem] w-auto max-w-[2rem] hover:animate-pulse"
+              />
+            </a>
+
+            <a href="https://twitter.com/qkcstudios" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/twitter.svg"
+                alt="twitter"
+                width={50}
+                height={50}
+                className="h-auto max-h-[2rem] w-auto max-w-[2rem] hover:animate-pulse"
+              />
+            </a>
+
+            <a href="https://open.spotify.com/playlist/6EdWkciJ9At70lkbT3ugEo?si=ddd28a4134224812" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/spotify.svg"
+                alt="spotify"
+                width={50}
+                height={50}
+                className="h-auto max-h-[2rem] w-auto max-w-[2rem] hover:animate-pulse"
+              />
+            </a>
+            <a href="https://www.linkedin.com/company/qkc-studios" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/linkedin.svg"
+                alt="linkedin"
+                width={50}
+                height={50}
+                className="h-auto max-h-[2rem] w-auto max-w-[2rem] hover:animate-pulse"
+              />
+            </a>
             </div>
             <p>
               Alternatively, take a look at some common questions for quick

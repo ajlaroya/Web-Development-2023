@@ -8,7 +8,7 @@ import ProductImage from "@/app/product/[handle]/ProductImage";
 import ProductSlider from "@/app/product/[handle]/ProductSlider";
 
 const Product = ({ product, products }) => {
-  const { variants, images } = product;
+  const { variants } = product;
   const initialProduct = {
     colour: variants[0].selectedOptions[0].value,
     size: variants[0].selectedOptions[1]?.value,
@@ -44,7 +44,7 @@ const Product = ({ product, products }) => {
     <>
       {/* Product details */}
       <div className="relative flex flex-col gap-6 md:flex-row-reverse">
-        <ProductImage activeProduct={activeProduct} images={images} />
+        <ProductImage activeProduct={activeProduct} />
         <ProductDetails
           product={product}
           activeProduct={activeProduct}

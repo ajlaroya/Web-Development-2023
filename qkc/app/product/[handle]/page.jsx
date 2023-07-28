@@ -7,11 +7,24 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${product.title} | QKC Studios®`,
-    description: "minimal, modern, and affordable clothing brand for introverts",
+    description: `${product.description}`,
     referrer: "origin-when-cross-origin",
-    keywords: ["minimal", "modern", "affordable", "clothing", "brand", "introverts", "fashion", "men", "women", "kids", "accessories", "shoes", "clothing"],
+    keywords: ["minimal", "modern", "affordable", "clothing", "brand", "introvert", "fashion", "quiet", "kids", "club"],
     colorScheme: "dark",
     creator: "Arthur Laroya",
+    openGraph: {
+      title: `${product.title} | QKC Studios®`,
+      description: `${product.description}`,
+      url: `https://qkc-studios.vercel.app/${handle}`,
+      siteName: 'QKC Studios®',
+      images: [
+        {
+          url:  `${product.images[0].src}`
+        },
+      ],
+      locale: 'en_AU',
+      type: 'website',
+    },
   };
 }
 

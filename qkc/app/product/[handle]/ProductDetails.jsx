@@ -34,7 +34,7 @@ const ProductDetails = ({
     <div className="flex flex-col md:w-1/2">
       {/* Product info */}
       <div className="flex flex-wrap justify-between text-xl font-semibold tracking-tight">
-        <span className="italic">{title}</span>
+        <span>{title}</span>
         <p>${Intl.NumberFormat("en-AU").format(variants[0].price.amount)}</p>
       </div>
       {/* Product SKU */}
@@ -52,7 +52,7 @@ const ProductDetails = ({
           type="button"
           className="flex w-full justify-between bg-transparent py-4 text-left font-bold transition"
         >
-          <span>Colour</span>
+          <span>Hue</span>
           <span>{activeColour}​</span>
         </div>
         <div className="relative max-h-[80px] overflow-hidden transition">
@@ -70,9 +70,9 @@ const ProductDetails = ({
                     }}
                     className={`${
                       activeColour === colour.value
-                        ? "ring-2 ring-white"
+                        ? "ring-white"
                         : "ring-[#1d1d1d]"
-                    } flex grow basis-1/3 cursor-pointer items-center justify-center rounded-full p-4 text-center text-xs ring-1 ring-inset transition duration-300 ease-in-out hover:ring-gray-200 md:text-sm`}
+                    } flex grow basis-1/3 cursor-pointer items-center justify-center rounded-full p-4 text-center text-xs ring-1 ring-inset transition duration-300 ease-in-out hover:ring-gray-100 md:text-sm`}
                     style={{ backgroundColor: convert(colour.value) }}
                   ></label>
                 </div>
@@ -127,7 +127,7 @@ const ProductDetails = ({
       <div className="mt-5 flex gap-5">
         <button
           type="button"
-          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-[#D3D3D3] px-6 py-4 text-sm sm:text-md text-black ring-inset transition duration-200 hover:text-white hover:ring-1 hover:ring-white font-semibold"
+          className="shrink grow basis-1/2 cursor-pointer items-center justify-center rounded-xl bg-[#D3D3D3] px-6 py-4 text-sm sm:text-md text-black ring-inset transition duration-200 hover:font-extrabold hover:animate-pulse hover:ring-1 hover:ring-white font-semibold"
           onClick={(e) => {
             e.preventDefault();
             addItemToCheckout(activeProduct.id, 1);

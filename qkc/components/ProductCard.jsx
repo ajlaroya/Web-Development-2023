@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 const ProductCard = ({ product, index }) => {
+  console.log(product.options[0].values.length)
   let dollarAULocale = Intl.NumberFormat("en-AU");
   const router = useRouter();
 
@@ -29,12 +30,12 @@ const ProductCard = ({ product, index }) => {
           <span className="mt-[-3px]">
             <a
               href={`/product/${product.handle}`}
-              className="flex justify-between font-medium tracking-normal"
+              className="flex justify-between font-medium text-sm sm:text-base md:text-sm text-gray-200 uppercase"
             >
               <span>
                 ${dollarAULocale.format(product.variants[0].price.amount)}
               </span>
-              <span>{product.title}</span>
+              <span>{product.title} / {product.options[0].values.length} hues</span>
             </a>
           </span>
         </div>
