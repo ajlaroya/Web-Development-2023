@@ -26,7 +26,7 @@ const Products = async () => {
           </h2>
           {/* Card desc */}
           <div className="mx-5 sm:mx-10 sm:text-xl md:text-lg">
-            <p className="text-justify text-sm sm:text-lg text-gray-200 uppercase md:text-base tracking-tight">
+            <p className="text-justify text-sm sm:text-lg text-gray-200 md:text-base tracking-tight">
               QKC Studios is an apparel line that celebrates the unique
               qualities of introverts. We are committed
               to creating a space where introverts can feel empowered and
