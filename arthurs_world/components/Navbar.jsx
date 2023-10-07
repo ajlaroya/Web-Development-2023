@@ -1,4 +1,4 @@
-const Navbar = () => {
+const Navbar = ({socialLinks}) => {
   return (
     <nav className="sticky top-0 isolate z-10 flex items-center justify-center py-4 px-1 md:justify-between">
       {/* Left Nav */}
@@ -47,25 +47,25 @@ const Navbar = () => {
       {/* Right Nav */}
       <div className="hidden md:flex transition-opacity opacity-100 bg-transparent mix-blend-difference!">
         <a
-          href="https://github.com/ajlaroya"
+          href={socialLinks.github}
           target="_blank"
           className=" rounded py-1 px-2 text-sm text-neutral-400 decoration-wavy underline-offset-4 focus-visible:ring-4 focus-visible:ring-blue-200 focus:text-neutral-900 cursor-alias transition-colors hover:text-neutral-900 hover:underline mix-blend-difference"
         >
           GitHub
         </a>
         <a
-          href="https://twitter.com/arthurlaroya"
+          href={socialLinks.twitter}
           target="_blank"
           className=" rounded py-1 px-2 text-sm text-neutral-400 decoration-wavy underline-offset-4 focus-visible:ring-4 focus-visible:ring-blue-200 focus:text-neutral-900 cursor-alias transition-colors hover:text-neutral-900 hover:underline"
         >
           Twitter
         </a>
         <a
-          href="https://read.cv/arthurlaroya"
+          href={socialLinks.linkedin}
           target="_blank"
           className=" rounded py-1 px-2 text-sm text-neutral-400 decoration-wavy underline-offset-4 focus-visible:ring-4 focus-visible:ring-blue-200 focus:text-neutral-900 cursor-alias transition-colors hover:text-neutral-900 hover:underline"
         >
-          CV
+          LinkedIn
         </a>
       </div>
     </nav>
