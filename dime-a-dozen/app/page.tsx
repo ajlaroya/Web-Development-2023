@@ -1,3 +1,4 @@
+import HeroCarousel from "@/components/HeroCarousel";
 import Searchbar from "@/components/Searchbar";
 import Image from "next/image";
 import React from "react";
@@ -5,11 +6,11 @@ import React from "react";
 const Home = () => {
   return (
     <>
-      <section className="px-6 md:px-20 py-24 border-2 border-red-500">
-        <div className="flex max-xl:flex-col gap-16">
-          <div className="flex flex-col justify-center">
+      <section className="px-6 md:px-20 py-24">
+        <div className="flex max-xl:flex-col gap-16 ">
+          <div className="flex flex-col justify-center md:w-1/2">
             <p className="small-text">
-              Smart shopping starts here:
+              Smart shopping starts here
               <Image
                 src="/assets/icons/arrow-right.svg"
                 alt="arrow-right"
@@ -34,7 +35,7 @@ const Home = () => {
 
             <Searchbar />
           </div>
-          <p>HeroCarousel</p>
+          <HeroCarousel />
         </div>
       </section>
 
