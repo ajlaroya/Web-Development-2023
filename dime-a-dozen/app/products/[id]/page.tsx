@@ -1,5 +1,7 @@
+import Modal from "@/components/Modal";
 import PriceInfoCard from "@/components/PriceInfoCard";
-import { getProductById } from "@/lib/actions";
+import ProductCard from "@/components/ProductCard";
+import { getProductById, getSimilarProducts } from "@/lib/actions";
 import { formatNumber } from "@/lib/utils";
 import { Product } from "@/types";
 import Image from "next/image";
@@ -15,6 +17,8 @@ const ProductDetails = async ({ params: { id } }: Props) => {
 
   // if no product, redirect home
   if (!product) redirect("/");
+
+  const similarProducts = await getSimilarProducts(id);
 
   return (
     <div className="product-container">
@@ -75,7 +79,6 @@ const ProductDetails = async ({ params: { id } }: Props) => {
               </div>
             </div>
           </div>
-
           <div className="product-info">
             <div className="flex flex-col gap-2">
               <p className="text-[34px] text-secondary font-bold">
@@ -114,44 +117,87 @@ const ProductDetails = async ({ params: { id } }: Props) => {
               </div>
 
               <p className="text-sm text-black opacity-50">
-                <span className="text-primary-green font-semibold">93%</span> of buyers have recommended this.
+                <span className="text-primary-green font-semibold">93%</span> of
+                buyers have recommended this.
               </p>
             </div>
           </div>
-
           <div className="my-7 flex flex-col gap-5">
             <div className="flex gap-5 flex-wrap">
               <PriceInfoCard
                 title="Current Price"
-                iconSrc='/assets/icons/price-tag.svg'
-                value={`${product.currency} ${formatNumber(product.currentPrice)}`}
+                iconSrc="/assets/icons/price-tag.svg"
+                value={`${product.currency} ${formatNumber(
+                  product.currentPrice
+                )}`}
                 borderColor="#b6dbff"
               />
               <PriceInfoCard
                 title="Average Price"
-                iconSrc='/assets/icons/chart.svg'
-                value={`${product.currency} ${formatNumber(product.averagePrice)}`}
+                iconSrc="/assets/icons/chart.svg"
+                value={`${product.currency} ${formatNumber(
+                  product.averagePrice
+                )}`}
                 borderColor="#b6dbff"
               />
               <PriceInfoCard
-                title="Current Price"
-                iconSrc='/assets/icons/arrow-up.svg'
-                value={`${product.currency} ${formatNumber(product.highestPrice)}`}
+                title="Highest Price"
+                iconSrc="/assets/icons/arrow-up.svg"
+                value={`${product.currency} ${formatNumber(
+                  product.highestPrice
+                )}`}
                 borderColor="#b6dbff"
               />
               <PriceInfoCard
                 title="Lowest Price"
-                iconSrc='/assets/icons/arrow-down.svg'
-                value={`${product.currency} ${formatNumber(product.lowestPrice)}`}
+                iconSrc="/assets/icons/arrow-down.svg"
+                value={`${product.currency} ${formatNumber(
+                  product.lowestPrice
+                )}`}
                 borderColor="#beffc5"
               />
             </div>
           </div>
 
-          Modal
-          {/* 2:44:34 */}
+          <Modal productId={id} />
         </div>
       </div>
+
+      <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-5">
+          <h3 className="text-2xl text-secondary font-semibold">
+            Product description
+          </h3>
+          <div className="flex flex-col gap-4">
+            {product?.description?.split("\n")}
+          </div>
+        </div>
+
+        <button className="btn w-fit mx-auto flex items-center justify-center gap-3 min-w-[200px]">
+          <Image
+            src="/assets/icons/bag.svg"
+            alt="check"
+            width={22}
+            height={22}
+          />
+
+          <Link href="/" className="text-base text-white">
+            Buy Now
+          </Link>
+        </button>
+      </div>
+
+      {similarProducts && similarProducts?.length > 0 && (
+        <div className="py-14 flex flex-col gap-2 w-full">
+          <p className="section-text">Similar products</p>
+
+          <div className="flex flex-wrap gap-10 mt-7 w-full">
+            {similarProducts.map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
